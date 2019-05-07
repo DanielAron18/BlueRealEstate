@@ -4,6 +4,15 @@
 
 {% block content %}
 
-    <h1>LOCATION PAGE</h1>
+<script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAbyP5ufyOy17kNkrg2hENRL473QtEB3V4'></script>
+    <div style='overflow:hidden;height:400px;width: 100%;'>
+        <div id='gmap_canvas' style='height:400px;width:100%;'>
+
+        </div>
+        <style>#gmap_canvas img{max-width:none!important;background:none!important}</style>
+    </div>
+        <a href='https://www.add-map.net/'>google maps widget</a>
+    <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=394ef970a12aec919ee96625c60add1206966709'></script>
+    <script type='text/javascript'>function init_map(){var myOptions = {zoom:12,center:new google.maps.LatLng(64.13629953821341,-21.920299999999997),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(64.13629953821341,-21.920299999999997)});infowindow = new google.maps.InfoWindow({content:'<strong></strong><br><br> Reykjavik<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
 
 {% endblock %}
