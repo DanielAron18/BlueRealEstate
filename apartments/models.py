@@ -3,9 +3,11 @@ from django.contrib.postgres.fields import ArrayField
 
 
 # Model for apartment.
+import agent
+from agent.models import Agent
 
 
-class Apartments(models.Model):
+class Apartment(models.Model):
     name = models.CharField(max_length=255)
     postalcode = models.CharField(max_length=12)
     location = models.CharField(max_length=255)
@@ -13,5 +15,11 @@ class Apartments(models.Model):
     bedrooms = models.IntegerField(max_length=2)
     size = models.IntegerField(max_length=4)
     price = models.IntegerField(max_length=9)
-    images = ArrayField(models.URLField(max_length=255))
+    agentid = models.ForeignKey(Agent, on_delete=models.CASCADE)
+
+
+
+class ApartmentImage(models.Model):
+    image = models.CharField(max_length=999)
+    apartment = models.ForeignKey(Apartment, on_delete=models.CASCADE)
 
