@@ -38,82 +38,52 @@
 
         {% endblock %}
 
-        <!-- Footer -->
-        <footer class="footer blue pt-4">
-            <!-- Footer Links -->
-            <div class="container-fluid text-center text-md-left">
-
-            <!-- Grid row -->
+    <footer id="myFooter" style="background-color: lightskyblue; color:white;">
+        <div class="container">
             <div class="row">
-
-            <!-- Grid column -->
-            <div class="col-md-6 mt-md-0 mt-3">
-
-            <!-- Content -->
-            <h5 class="text-uppercase">BASE HTML</h5>
-            <p>Velkominn á base síðuna, þessi síða verður base fyrir allar aðrar. Nav bar osfr</p>
-
-            </div>
-            <!-- Grid column -->
-
-            <hr class="clearfix w-100 d-md-none pb-3">
-
-            <!-- Grid column -->
-            <div class="col-md-3 mb-md-0 mb-3">
-
-                <!-- Links -->
-                <h5 class="text-uppercase">Links</h5>
-
-                <ul class="list-unstyled">
-                <li>
-                <a href="#!">Link 1</a>
-                </li>
-                <li>
-                    <a href="#!">Link 2</a>
-                </li>
-                <li>
-                    <a href="#!">Link 3</a>
-                </li>
-                <li>
-                    <a href="#!">Link 4</a>
-                </li>
-                </ul>
-
-            </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-md-3 mb-md-0 mb-3">
-
-                    <!-- Links -->
-                    <h5 class="text-uppercase">Links</h5>
-
-                    <ul class="list-unstyled">
-                        <li>
-                        <a href="#!">Link 1</a>
-                        </li>
-                    <li>
-                        <a href="#!">Link 2</a>
-                    </li>
-                    <li>
-                        <a href="#!">Link 3</a>
-                    </li>
-                    <li>
-                        <a href="#!">Link 4</a>
-                    </li>
-                    </ul>
-
-                    </div>
-                <!-- Grid column -->
-
+                <div class="col-sm-3">
+                    <a href="#" class="navbar-brand">
+                        <img src="{% static 'images/logo.png' %}", height="100px">
+                    </a>
                 </div>
-                <!-- Grid row -->
-
+                <div class="col-sm-2">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Sign up</a></li>
+                        <li><a href="#">Downloads</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>About us</h5>
+                    <ul>
+                        <li><a href="#">Company Information</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help desk</a></li>
+                        <li><a href="#">Forums</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <div class="social-networks">
+                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+                    </div>
+                    <button type="button" class="btn btn-default">Contact us</button>
+                </div>
             </div>
-            <!-- Footer Links -->
-
-        </footer>
-        <!-- Footer -->
+        </div>
+        <div class="footer-copyright">
+            <p>© 2016 Copyright Text </p>
+        </div>
+    </footer>
 
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
