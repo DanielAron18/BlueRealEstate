@@ -27,11 +27,11 @@
             </div>
         </nav>
         <nav class="navbar sticky-top navbar-light bg-light">
-            <h5>Home10</h5>
-            <h5>About us</h5>
-            <h5>Contact us</h5>
-            <h5>Key Info</h5>
-            <h5>Why Blue?</h5>
+            <a href="{% url 'front_page' %}"><h5>Home10</h5></a>
+            <a href="#"><h5>About us</h5></a>
+            <a href="#"><h5>Contact us</h5></a>
+            <a href="{% url 'about_us' %}"><h5>Key Info</h5></a>
+            <a href="#"><h5>Why Blue?</h5></a>
         </nav>
 
         {% block content %}
