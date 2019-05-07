@@ -16,3 +16,6 @@ class Agent(models.Model):
     workphone = models.CharField(max_length=15)
     email = models.CharField(max_length=255)
     license = models.CharField(max_length=255)
+    description = models.CharField(max_length=255)
+    rating = models.IntegerField(max_length=1)
+    comments = ArrayField(models.CharField(max_length=140))
