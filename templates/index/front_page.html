@@ -1,7 +1,11 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
 
-    <h1>FRONT PAGE</h1>
+    <div>
+        <img src="{% static 'images/Advertisement.jpg'%}", style="margin: 2%;">
+    </div>
 
 {% endblock %}
