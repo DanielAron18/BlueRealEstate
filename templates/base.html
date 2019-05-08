@@ -15,7 +15,7 @@
 
     </head>
     <body>
-        <nav class="navbar sticky-top navbar-light bg-light">
+        <nav class="navbar sticky-top navbar-light" style="background: white">
             <a href="{% url 'front_page' %}"><img src="{% static 'images/logo.png' %}", height=50px></a>
             <a href="{% url 'front_page' %}"><h5 style="font-size: 1rem">Home10</h5></a>
             <a href="{% url 'about_us' %}"><h5 style="font-size: 1rem">About us</h5></a>
@@ -31,7 +31,7 @@
 
         {% endblock %}
 
-    <footer id="myFooter" style="background-color: lightskyblue; color:white;">
+    <footer id="myFooter" style="background: white";>
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
@@ -72,9 +72,6 @@
                     <button type="button" class="btn btn-default">Contact us</button>
                 </div>
             </div>
-        </div>
-        <div class="footer-copyright">
-            <p>© 2016 Copyright Text </p>
         </div>
     </footer>
 
