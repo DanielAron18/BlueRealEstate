@@ -19,7 +19,6 @@
 
 /* The form */
 #search_form {
-    width: 60%;
     width: 100%;
     margin: 0 auto 0 auto;
     padding: 3% 0 3% 8%;
@@ -47,7 +46,7 @@
 }
 
 
-@media only screen and (min-width: 1281px) {
+@media only screen and (min-width: 1000px) {
     /* Main Content */
     /* Search for apartment og Logo Staðsetningar */
     #search {
@@ -67,13 +66,13 @@
     
 }
 
-@media only screen and (max-width: 1280) {
+@media only screen and (max-width: 999px) {
     #search {
         width: 95%;
     }
 }
 
-@media only screen and (max-width: 813px) {
+@media only screen and (max-width: 713px) {
     #search {
         width: 100%;
     }
