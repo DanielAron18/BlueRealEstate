@@ -25,4 +25,5 @@ urlpatterns = [
     path('contact_us/', include("contact_us.urls")),
     path('why_blue/', include("why_blue.urls")),
     path('location/', include("location.urls")),
+    path('log_in/', include("log_in.urls")),
 ]

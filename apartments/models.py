@@ -21,5 +21,6 @@ class Apartment(models.Model):
 
 class ApartmentImage(models.Model):
     image = models.CharField(max_length=999)
+    mainimage = models.BooleanField()
     apartment = models.ForeignKey(Apartment, on_delete=models.CASCADE)
 
