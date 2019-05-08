@@ -23,6 +23,10 @@ body {
   border: 1px solid rgba(0,0,0,0.1);
 }
 
+.form-signin-heading {
+  color: #3697fe;
+}
+
 .checkbox {
   margin-bottom: 30px;
 }
@@ -33,13 +37,13 @@ body {
 }
 
 input[type="text"] {
-  margin-bottom: -1px;
+  margin-bottom: 10px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 
 input[type="password"] {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
