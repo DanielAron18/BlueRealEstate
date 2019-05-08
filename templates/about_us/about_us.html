@@ -1,7 +1,67 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% load static %}
 
-    <h1>ABOUT US PAGE</h1>
+{% block content %}
+    <div class="container"><h1 style="color: #3697fe">About Us</h1></div>
+    <div style="margin-left: 10%;margin-bottom: 5%;margin-right: 10%;margin-top: 2%;">
+        <p style="text-align: center;">Welcome to Blue Real Estate, where exemplary service and fast sales are a priority!
+            This company was established in 2019 by five guys who have lived and breathed the real estate industry
+            for many years now. We worked for other companies in the past but decided to join together and create our
+            own path in the real estate world. This is a young company, but we strive for big things in the near future
+            and are already making great strides in the markets today.</p>
+            <p style="text-align: center;">
+            <strong>Why blue?</strong>
+            </p>
+            <p style="text-align: center;">
+            Our first customers were the band Blue Man Group. They had one requirement, the houses needed to be blue.
+            This was a tough task to take on but with our combined skills we achieved it in record time with little
+            effort. This made us realise that there was a possible market for blue houses and something that other
+            companies were not exploring. If the house you really want is not blue then we provide free painters to
+            make it so. The sky is the limit!
+            </p>
+            <p style="text-align: center;">
+            If you’re in need of a new home then we are confident that we can find your dream BLUE home at a reasonable
+            price, with emphasis on blue! The sky is blue so why shouldn’t your house be as well?
+            </p>
+    </div>
+
+
+    <div class="container marketing" style="text-align: center;">
+      <!-- Three columns of text below the carousel -->
+        <div class="row">
+            <div class="col-lg-4">
+            <img class="rounded-circle" src="{% static "images/Eigandi_1.jpg" %}" width="140" height="140">
+            <h2>Daníel Aron Davíðsson</h2>
+            <p>I have always dreamt of starting a company including two of my favourite things in the world, the colour
+            Blue and Real Estate.</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <img class="rounded-circle" src="{% static "images/Eigandi_2.jpg" %}" width="140" height="140">
+            <h2>Hávar Sigurðarson</h2>
+            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+        </div><!-- /.col-lg-4 -->
+            <div class="col-lg-4">
+                <img class="rounded-circle" src="{% static "images/Eigandi_3.jpg" %}" width="140" height="140">
+                <h2>Gylfi Þór Helgasson</h2>
+                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+    </div>
+        <div class="container marketing" style="text-align: center; margin-bottom: 5%;">
+      <!-- Three columns of text below the carousel -->
+        <div class="row">
+            <div class="col-lg-4" style="margin-left: 12%">
+            <img class="rounded-circle" src="{% static "images/Eigandi_4.jpg" %}" width="140" height="140">
+            <h2>Ívar Smárason</h2>
+            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4" style="margin-left: 10%">
+            <img class="rounded-circle" src="{% static "images/Eigandi_5.jpg" %}" width="140" height="140">
+            <h2>Hólmar Karl</h2>
+            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+        </div>
+        </div>
+    </div>
 
 {% endblock %}
