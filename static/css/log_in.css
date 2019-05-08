@@ -98,12 +98,11 @@ body {
   color: #777;
 }
 
-.btn-google {
-  color: white;
-  background-color: #ea4335;
+#Register {
+    float: left;
+    margin: 1rem;
 }
-
-.btn-facebook {
-  color: white;
-  background-color: #3b5998;
+#Forgot\ Password{
+    margin: 1rem;
+    float: right;
 }
