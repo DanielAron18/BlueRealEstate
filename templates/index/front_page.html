@@ -1,11 +1,69 @@
 {% extends 'base.html' %}
 
 {% load static %}
-
 {% block content %}
-
-    <div>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <div id="bl_logo">
         <a href="{% url 'contact_us' %}"><img src="{% static 'images/Advertisement.jpg'%}", style="margin: 2%;"></a>
+    </div>
+    <div>
+
+        <div id="search">
+
+    <form action="/action_page.php" id="search_form">
+
+      <!-- Look for apartment input field -->
+      <div class="row">
+        <div class="col-8">
+          <input class="form-control" type="text" placeholder="Look for apartment..." aria-label="Look for apartment">
+        </div>
+      <!-- Search takkinn -->
+        <div class="col-3 search_btn_container">
+          <button type="submit" class="btn btn-primary btn-lg search_button"><p>search</p></button>
+        </div>
+      </div>
+
+      <!-- zip og Price dálkur -->
+      <div class="row">
+        <div class="col-3">
+          <input class="form-control" type="text" placeholder="zip" aria-label="zip">
+        </div>
+        <div class="col-5">
+          <input class="form-control" type="text" placeholder="price" aria-label="price">
+        </div>
+      </div>
+
+      <!-- Size, Type, Rooms -->
+      <div id="search_buttons_parameters">
+        <select id="size" class="btn btn-primary search_drop" name="country">
+          <option value="size_default">Size</option>
+          <option value="0-50FM">0 - 50 fm</option>
+          <option value="50-100FM">50 - 100 fm</option>
+          <option value="100-150FM">100 - 150 fm</option>
+          <option value="150-200FM">150 - 200 fm</option>
+          <option value="200-250FM">200 - 250 fm</option>
+          <option value="250-300FM">250 - 300 fm</option>
+          <option value="300-350FM">350 - 400 fm</option>
+        </select>
+        <select id="type" class="btn btn-primary search_drop" name="country">
+          <option value="type_default">Type</option>
+          <option value="townhouse">Townhouse</option>
+          <option value="duplex">Duplex</option>
+          <option value="detached_house">Detached House</option>
+        </select>
+        <select id="country" class="btn btn-primary search_drop" name="country">
+          <option value="rooms_default">Bed rooms</option>
+          <option value="canada">0 - 1</option>
+          <option value="1-2">1 - 2</option>
+          <option value="2-3">2 - 3</option>
+          <option value="3-4">3 - 4</option>
+          <option value="4-5">4 - 5</option>
+          <option value="5-6">5 - 6</option>
+        </select>
+      </div>
+
+    </form>
+  </div>
     </div>
 
 {% endblock %}
