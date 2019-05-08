@@ -52,7 +52,7 @@
     #search {
         display: inline-block;
         width: 60%;
-        margin: 5% auto 0 8%;
+        margin: 5% 0 0 0.1%;
     }
 
     #main_content_index {
@@ -63,13 +63,17 @@
         display: inline-block;
         width: 20%;
     }
+
+    #bl_logo img {
+        width: 100%;
+    }
     
 }
 
 @media only screen and (max-width: 999px) {
     #search {
         width: 95%;
-        margin: 5% auto 5% auto;
+        margin: 5% 0 5% 0;
     }
 
     #bl_logo {
@@ -80,7 +84,7 @@
 @media only screen and (max-width: 713px) {
     #search {
         width: 100%;
-        margin: 5% auto 5% auto;
+        margin: 5% 0 5% 0;
     }
 
     .search_button {
