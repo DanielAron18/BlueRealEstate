@@ -5,12 +5,13 @@ from contact_us.forms import ContactUsForm
 
 # Create your views here.
 
-class ContactUsView(TemplateView)
-    def contact_us_index(self, request):
-        return render(request, "contact_us/contact_us.html")
 
-    def post(self, request):
-        form = ContactUsForm(request.POST)
 
-        if form.is_valid():
-            name = form.cleaned_data['name']
+def contact_us_index(request):
+    return render(request, "contact_us/contact_us.html")
+
+def post(request):
+    form = ContactUsForm(request.POST)
+
+    if form.is_valid():
+        name = form.cleaned_data['name']
