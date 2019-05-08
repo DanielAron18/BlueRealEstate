@@ -73,7 +73,7 @@
 @media only screen and (max-width: 999px) {
     #search {
         width: 95%;
-        margin: 5% 0 5% 0;
+        margin: 5% auto 5% auto;
     }
 
     #bl_logo {
