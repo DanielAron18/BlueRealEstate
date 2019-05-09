@@ -8,4 +8,4 @@ def log_in_index(request):
 
 
 def register_index(request):
-    return render(request, "log_in/register.hrml")
+    return render(request, "log_in/register.html")
