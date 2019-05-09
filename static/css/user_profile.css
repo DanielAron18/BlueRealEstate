@@ -1,0 +1,8 @@
+.row {
+    text-align: center;
+}
+.user-photo {
+    width: 300px;
+    height: 300px;
+    padding: 10px;
+}
