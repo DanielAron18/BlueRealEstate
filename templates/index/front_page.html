@@ -15,7 +15,7 @@
             <!-- Look for apartment input field -->
             <div class="row">
                 <div class="col-8">
-                    <input class="form-control" type="text" placeholder="Look for apartment..." aria-label="Look for apartment">
+                    <input class="form-control search_input" type="text" placeholder="Look for apartment..." aria-label="Look for apartment">
                 </div>
                 <!-- Search takkinn -->
                 <div class="col-3 search_btn_container">
@@ -26,16 +26,16 @@
             <!-- zip og Price dálkur -->
             <div class="row">
                 <div class="col-3">
-                    <input class="form-control" type="text" placeholder="zip" aria-label="zip">
+                    <input class="form-control zip_input" type="text" placeholder="zip" aria-label="zip">
                 </div>
                 <div class="col-5">
-                    <input class="form-control" type="text" placeholder="price" aria-label="price">
+                    <input class="form-control price_input" type="text" placeholder="price" aria-label="price">
                 </div>
             </div>
 
             <!-- Size, Type, Rooms -->
             <div id="search_buttons_parameters">
-                <select id="size" class="btn btn-primary search_drop" name="country">
+                <select id="size" class="btn btn-primary search_drop" name="size">
                     <option value="size_default">Size</option>
                     <option value="0-50FM">0 - 50 fm</option>
                     <option value="50-100FM">50 - 100 fm</option>
@@ -45,15 +45,15 @@
                     <option value="250-300FM">250 - 300 fm</option>
                     <option value="300-350FM">350 - 400 fm</option>
                 </select>
-                <select id="type" class="btn btn-primary search_drop" name="country">
+                <select id="type" class="btn btn-primary search_drop" name="type">
                     <option value="type_default">Type</option>
                     <option value="townhouse">Townhouse</option>
                     <option value="duplex">Duplex</option>
                     <option value="detached_house">Detached House</option>
                 </select>
-                <select id="country" class="btn btn-primary search_drop" name="country">
+                <select id="bedrooms" class="btn btn-primary search_drop" name="bedrooms">
                    <option value="rooms_default">Bedrooms</option>
-                   <option value="canada">0 - 1</option>
+                   <option value="0-1">0 - 1</option>
                    <option value="1-2">1 - 2</option>
                    <option value="2-3">2 - 3</option>
                    <option value="3-4">3 - 4</option>

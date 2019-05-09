@@ -45,13 +45,18 @@
     padding-left: 7%;
 }
 
+.form-control.search_input, .btn.btn-primary.btn-lg.search_button,
+.form-control.zip_input, .form-control.price_input {
+    border-radius: .95rem;
+}
 
-@media only screen and (min-width: 1000px) {
+
+@media only screen and (min-width: 992px) {
     /* Main Content */
     /* Search for apartment og Logo Staðsetningar */
     #search {
         display: inline-block;
-        width: 60%;
+        width: 55rem;
         margin: 5% 0 0 0.1%;
     }
 
@@ -67,10 +72,9 @@
     #bl_logo img {
         width: 100%;
     }
-    
 }
 
-@media only screen and (max-width: 999px) {
+@media only screen and (max-width: 992px) {
     #search {
         width: 95%;
         margin: 5% auto 5% auto;
@@ -81,7 +85,7 @@
     }
 }
 
-@media only screen and (max-width: 713px) {
+@media only screen and (max-width: 600px) {
     #search {
         width: 100%;
         margin: 5% 0 5% 0;
@@ -94,5 +98,33 @@
     #bl_logo {
         display: none;
     }
+
+    /* Search Takkinn */
+    .btn.btn-primary.btn-lg.search_button {
+        width: 4.9rem;
+        height: 3rem;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Search Takkinn texti */
+    .btn.btn-primary.btn-lg.search_button p {
+        font-size: 14px;
+    }
+
+    /* Drop Down */
+    .btn.btn-primary.search_drop {
+        font-size: 14px;
+    }
+
+    /* Bedrooms Drop downinð*/
+    #bedrooms {
+        margin-top: 1%;
+    }
+    #bedrooms, #size, #type {
+        padding-top: 1%;
+    }
+
+
 }
 
