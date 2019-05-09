@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'index',
     'key_information',
     'location',
-    'log_in',
     'user',
     'why_blue'
 ]

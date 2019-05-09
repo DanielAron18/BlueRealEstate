@@ -3,6 +3,20 @@ body {
   text-align: center;
 }
 
+span{
+  display: block;
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+li{
+  display: block;
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
+ }
+
 .wrapper {
   margin: 5% auto 5% auto;
   width: 70%;
