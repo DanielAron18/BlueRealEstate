@@ -31,7 +31,7 @@
         <a href="{% url 'key_info' %}"><h5 style="font-size: 1rem">Key Info</h5></a>
         <a href="{% url 'why_blue' %}"><h5 style="font-size: 1rem">Why Blue?</h5></a>
         {% if user.is_authenticated %}
-            <a href="#"><img src="{% static 'images/agent_logo.png' %}" style="height: 50px;"></a>
+            <a href="{% url 'user_profile' %}"><img src="{% static 'images/agent_logo.png' %}" style="height: 50px;"></a>
             <a href="{% url 'log_out' %}" style="font-size: 0.5rem;"><h5>Logout</h5></a>
             {% else %}
             <a href="{% url 'log_in' %}"><h5 style="font-size: 1rem">Log in</h5></a>

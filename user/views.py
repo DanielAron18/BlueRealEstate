@@ -8,6 +8,10 @@ def log_in_index(request):
     return render(request, "user/log_in.html")
 
 
+def user_profile_index(request):
+    return render(request, 'user/user_profile.html')
+
+
 def register_index(request):
     if request.method == "POST":
         form = UserCreationForm(data=request.POST)
