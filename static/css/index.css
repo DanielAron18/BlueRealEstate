@@ -3,13 +3,6 @@
 */
 
 
-/* Box Around all form content*/
-#search {
-    -webkit-box-shadow: 2px 6px 26px -2px rgba(0,0,0,0.75);
-    -moz-box-shadow: 2px 6px 26px -2px rgba(0,0,0,0.75);
-    box-shadow: 2px 6px 26px -2px rgba(0,0,0,0.75);
-}
-
 /* Box inside the #search box for content padding */
 .search_field_content {
     margin: 0 auto 0 auto;
@@ -53,11 +46,15 @@
 
 @media only screen and (min-width: 992px) {
     /* Main Content */
-    /* Search for apartment og Logo Staðsetningar */
+
+    /* Box Around all form content*/
     #search {
         display: inline-block;
         width: 55rem;
         margin: 5% 0 0 0.1%;
+        -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.41);
+        -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.41);
+        box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.41);
     }
 
     #main_content_index {
@@ -76,9 +73,14 @@
 
 /* Ipadar og svipuð tæki */
 @media only screen and (max-width: 992px) {
+
+    /* Box Around all form content*/
     #search {
         width: 95%;
         margin: 5% auto 5% auto;
+        -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.41);
+        -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.41);
+        box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.41);
     }
 
     #bl_logo {
@@ -90,7 +92,10 @@
 @media only screen and (max-width: 600px) {
     #search {
         width: 100%;
-        margin: 5% 0 5% 0;
+        margin: 0 0 5% 0;
+        -webkit-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+        -moz-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+        box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
     }
 
     .search_button {
