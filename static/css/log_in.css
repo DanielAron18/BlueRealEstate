@@ -25,6 +25,7 @@ body {
 
 .form-signin-heading {
   color: #3697fe;
+  margin-bottom: 10px;
 }
 
 .checkbox {
@@ -37,6 +38,12 @@ body {
 }
 
 input[type="text"] {
+  margin-bottom: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+input[type="email"] {
   margin-bottom: 10px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
