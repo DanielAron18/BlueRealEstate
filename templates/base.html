@@ -16,9 +16,6 @@
     <!-- Main style sheet -->
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
-
     <!-- Javascript -->
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 
@@ -27,33 +24,34 @@
     <!-- Main Navigation bar -->
     <nav id="main_nav" class="navbar sticky-top navbar-light">
         <a href="{% url 'front_page' %}"><img src="{% static 'images/logo.png' %}", height=50px></a>
-        <a href="{% url 'front_page' %}"><h5 style="font-size: 1rem">Home</h5></a>
+        <a href="{% url 'front_page' %}"><h5 style="font-size: 1rem">Home10</h5></a>
         <a href="{% url 'about_us' %}"><h5 style="font-size: 1rem">About us</h5></a>
         <a href="{% url 'location' %}"><h5 style="font-size: 1rem">Location</h5></a>
         <a href="{% url 'contact_us' %}"><h5 style="font-size: 1rem">Contact us</h5></a>
         <a href="{% url 'key_info' %}"><h5 style="font-size: 1rem">Key Info</h5></a>
         <a href="{% url 'why_blue' %}"><h5 style="font-size: 1rem">Why Blue?</h5></a>
-        <a href="{% url 'log_in' %}"><h5 style="font-size: 1rem">Log in</h5></a>
+        {% if user.is_authenticated %}
+            <a href="#"><img src="{% static 'images/agent_logo.png' %}" style="height: 50px;"></a>
+            <a href="{% url 'log_out' %}" style="font-size: 0.5rem;"><h5>Logout</h5></a>
+            {% else %}
+            <a href="{% url 'log_in' %}"><h5 style="font-size: 1rem">Log in</h5></a>
+        {% endif %}
     </nav>
 
     <!-- Mobile Navigation bar -->
     <!-- Top Navigation Menu -->
-    <div class="topnav_mobile">
-        <a href="#home" class="active" id="mob_logo">Blue Real Estate</a>
-        <!-- Navigation links (hidden by default) -->
-        <div id="myLinks">
-            <a href="{% url 'front_page' %}">Home</a>
-            <a href="{% url 'about_us' %}">About us</a>
-            <a href="{% url 'location' %}">Location</a>
-            <a href="{% url 'contact_us' %}">Contact us</a>
-            <a href="{% url 'key_info' %}">Key Info</a>
-            <a href="{% url 'why_blue' %}">Why Blue?</a>
-            <a href="{% url 'log_in' %}"><b>Log in</b></a>
-        </div>
-        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-        <a href="javascript:void(0);" class="icon" onclick="showHideNav()">
+    <div class="topnav">
+      <a href="#home" class="active">Logo</a>
+      <!-- Navigation links (hidden by default) -->
+      <div id="myLinks">
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+      </div>
+      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      <a class="icon" onclick="showHideNav()">
         <i class="fa fa-bars"></i>
-        </a>
+      </a>
     </div>
 
     {% block content %}
