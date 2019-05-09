@@ -3,7 +3,6 @@
 {% load static %}
 {% block content %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
-
     <div id="main_content_index">
         <div id="bl_logo">
             <a href="{% url 'contact_us' %}"><img src="{% static 'images/Advertisement.jpg'%}", style="margin: 2%;"></a>
@@ -61,6 +60,14 @@
                 </select>
             </div>
             </form>
+            <div id="TrendingApartments">
+            <h3>Trending Apartments!</h3>
+                {% for apartment in apartments %}
+                    <div class="singleapartment" style="border:1px solid black">
+                    {{ apartment }}
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}
