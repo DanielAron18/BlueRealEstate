@@ -9,28 +9,51 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>BaseHtml</title>
 
+    <!-- Bootstrap Stylesheet -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Main style sheet -->
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
-    </head>
-    <body>
-        <nav class="navbar sticky-top navbar-light" style="background: white">
-            <a href="{% url 'front_page' %}"><img src="{% static 'images/logo.png' %}", height=50px></a>
-            <a href="{% url 'front_page' %}"><h5 style="font-size: 1rem">Home10</h5></a>
-            <a href="{% url 'about_us' %}"><h5 style="font-size: 1rem">About us</h5></a>
-            <a href="{% url 'location' %}"><h5 style="font-size: 1rem">Location</h5></a>
-            <a href="{% url 'contact_us' %}"><h5 style="font-size: 1rem">Contact us</h5></a>
-            <a href="{% url 'key_info' %}"><h5 style="font-size: 1rem">Key Info</h5></a>
-            <a href="{% url 'why_blue' %}"><h5 style="font-size: 1rem">Why Blue?</h5></a>
-            <a href="{% url 'log_in' %}"><h5 style="font-size: 1rem">Log in</h5></a>
-        </nav>
+    <!-- Javascript -->
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 
+</head>
+<body>
+    <!-- Main Navigation bar -->
+    <nav id="main_nav" class="navbar sticky-top navbar-light">
+        <a href="{% url 'front_page' %}"><img src="{% static 'images/logo.png' %}", height=50px></a>
+        <a href="{% url 'front_page' %}"><h5 style="font-size: 1rem">Home10</h5></a>
+        <a href="{% url 'about_us' %}"><h5 style="font-size: 1rem">About us</h5></a>
+        <a href="{% url 'location' %}"><h5 style="font-size: 1rem">Location</h5></a>
+        <a href="{% url 'contact_us' %}"><h5 style="font-size: 1rem">Contact us</h5></a>
+        <a href="{% url 'key_info' %}"><h5 style="font-size: 1rem">Key Info</h5></a>
+        <a href="{% url 'why_blue' %}"><h5 style="font-size: 1rem">Why Blue?</h5></a>
+        <a href="{% url 'log_in' %}"><h5 style="font-size: 1rem">Log in</h5></a>
+    </nav>
 
-        {% block content %}
+    <!-- Mobile Navigation bar -->
+    <!-- Top Navigation Menu -->
+    <div class="topnav">
+      <a href="#home" class="active">Logo</a>
+      <!-- Navigation links (hidden by default) -->
+      <div id="myLinks">
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+      </div>
+      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      <a class="icon" onclick="showHideNav()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
 
-        {% endblock %}
+    {% block content %}
 
-    <footer id="myFooter" style="background: white";>
+    {% endblock %}
+
+    <footer id="myFooter">
         <div class="container">
             <div class="row">
                 <div class="col-sm-3">
@@ -78,5 +101,5 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    </body>
+</body>
 </html>

@@ -74,6 +74,7 @@
     }
 }
 
+/* Ipadar og svipuð tæki */
 @media only screen and (max-width: 992px) {
     #search {
         width: 95%;
@@ -85,6 +86,7 @@
     }
 }
 
+/* Mobile Skjáir */
 @media only screen and (max-width: 600px) {
     #search {
         width: 100%;
