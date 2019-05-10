@@ -1,6 +1,14 @@
 body {
-	background: #eee;
+  background: #fff;
   text-align: center;
+  display:flex;
+  flex-direction:column;
+}
+
+/* Til að fá footerinn til að haldast á botninum */
+html, body{
+  height:100%;
+  margin:0;
 }
 /*
 span{
@@ -34,7 +42,9 @@ li{
   padding: 15px 35px 45px;
   margin: 0 auto;
   background-color: #fff;
-  border: 1px solid rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+  -moz-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+  box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
 }
 
 .form-signin-heading {
@@ -75,4 +85,24 @@ input[type="password"] {
 
 #forgot-password{
   float: right;
+}
+
+/* Smá bil milli sign up og takkans*/
+#SignupForgotContainer a {
+  margin-bottom: 4%;
+}
+
+/* Til að fá footerinn til að haldast á botninum */
+#myFooter {
+  margin-top:auto;
+}
+
+/* Laga staðsetninguna á password og username*/
+#id_username {
+  margin-right: 2%;
+}
+
+/* Laga staðsetninguna á password og username*/
+#id_password,#id_username {
+  margin-left: 2%;
 }
