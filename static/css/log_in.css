@@ -26,7 +26,7 @@ li{
  }
 */
 .wrapper {
-  margin: 5% auto 5% auto;
+  margin: auto;
   width: 70%;
   box-sizing: border-box;
 }
