@@ -1,7 +1,15 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
-
-    <h1>WHY BLUE? PAGE</h1>
-
+<link rel="stylesheet" href="{% static 'css/why_blue.css' %}">
+    <div class="container marketing">
+        <h1 id="why_blue">Why Blue?</h1>
+        <p>Our first customers were the band Blue Man Group. They had one requirement, the houses needed to be blue.
+            This was a tough task to take on but with our combined skills we achieved it in record time with little
+            effort. This made us realise that there was a possible market for blue houses and something that other
+            companies were not exploring. If the house you really want is not blue then we provide free painters to
+            make it so. The sky is the limit!</p>
+    </div>
 {% endblock %}
