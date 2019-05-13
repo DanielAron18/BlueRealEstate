@@ -1,0 +1,14 @@
+<div class="singleapartment">
+    <a href="apartment_details/{{ apartment.id }}">
+        <img class="apartmentImage" src="{{ apartment.apartmentimage_set.first }}" />
+        <div class="propInfo text-center">
+            <h5>{{ apartment.address }}</h5>
+            <h6>{{ apartment.location }}</h6>
+            <br>
+            <p>{{apartment.size }} fm<sup>2</sup></p>
+        </div>
+        <div class="propPrice text-center">
+            <h5>{{ apartment.price }}.kr</h5>
+        </div>
+    </a>
+</div>

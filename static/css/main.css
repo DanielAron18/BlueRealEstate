@@ -1,4 +1,6 @@
-/* Navigation Bar */
+/* **********************************
+        Navigation Bar
+************************************/
 .navbar.sticky-top.navbar-light {
     background: white;
     -webkit-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
@@ -7,11 +9,21 @@
     /*background-image: linear-gradient(to right, #3099ff, #3b9eff, #45a3fe, #4fa7fe, #58acfd);*/
 }
 
-body {
-    height: 200rem;
-}
+/* **********************************
 
-@media only screen and (min-width: 992px) {
+        FOOTER SECTION
+
+*************************************/
+
+
+
+/*************************************/
+
+
+/**************************************
+        Stórir Skjáir
+ **************************************/
+@media only screen and (min-width: 1079px) {
 
     /* Remove Mobile navbar from bigger screens*/
     .topnav_mobile {
@@ -19,11 +31,34 @@ body {
     }
 }
 
-/* Mobile sjáir */
+/***********END STÓRIR SKJÁIR**********/
+
+/**************************************
+        Ipad og millistærðir
+ **************************************/
+@media only screen and (min-width: 600px) and (max-width: 1078px) {
+
+    /* Remove Mobile navbar from bigger screens*/
+    .topnav_mobile {
+        display: none;
+    }
+}
+
+/**********END IPAD SKJÁIR*************/
+
+
+/**************************************
+            Simaskjáir
+ **************************************/
 @media only screen and (max-width: 600px) {
     /* Fjarlægir Main Navigation bar*/
     #main_nav {
         display: None;
+    }
+
+    /* Fjarlægja Auglýsingu*/
+    #bl_logo {
+        display: none;
     }
 
     /* Style the navigation menu */
@@ -45,6 +80,7 @@ body {
         text-decoration: none;
         font-size: 1.09rem;
         display: block;
+        border-top: 0.03rem solid #404040;
     }
 
     /* Style the hamburger menu */
@@ -58,7 +94,7 @@ body {
 
     /* Add a grey background color on mouse-over */
     .topnav_mobile a:hover {
-        background-color: #ddd;
+        background-color: #6cc8ff;
         color: black;
     }
 
@@ -73,7 +109,11 @@ body {
         font-family: 'Handlee', cursive;
     }
 
+    /* Style a hamburger menu þvi hann fer i rugl ef etta er i a.icon */
     .fa.fa-bars {
         font-size: 1.8rem;
+        color: white;
     }
 }
+
+/************END SIMASKJÁIR*****************/

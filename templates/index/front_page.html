@@ -4,6 +4,8 @@
 {% block content %}
     <link rel="stylesheet" href="{% static 'css/index.css' %}">
     <div id="main_content_index">
+
+        <!-- Advertisement -->
         <div id="bl_logo">
             <a href="{% url 'contact_us' %}"><img src="{% static 'images/Advertisement.jpg'%}", style="margin: 2%;"></a>
         </div>
@@ -60,14 +62,19 @@
                 </select>
             </div>
             </form>
-            <div id="TrendingApartments">
-            <h3>Trending Apartments!</h3>
-                {% for apartment in apartments %}
-                    <div class="singleapartment" style="border:1px solid black">
-                    {{ apartment }}
-                    </div>
-                {% endfor %}
             </div>
+            <!-- Advertisement -->
+            <div id="bl_logo_1">
+                <a href="{% url 'contact_us' %}"><img src="{% static 'images/Advertisement.jpg'%}", style="margin: 2%;"></a>
+            </div>
+        </div>
+
+    <div id="TrendingApartmentsContainer">
+        <h3 id="TrendingApartmentsHeader">New apartments</h3>
+        <div id="TrendingApartments">
+            {% for apartment in apartments %}
+                    {% include 'apartments/single_apartment.html' with  apartment=apartment %}
+            {% endfor %}
         </div>
     </div>
 {% endblock %}
