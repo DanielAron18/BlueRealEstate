@@ -6,25 +6,30 @@
     <link rel="stylesheet" href="{% static 'css/user_profile.css' %}">
     <div class="row">
         <div class="col">
+            <h1 id="h1-profile">Profile</h1>
             <div class="card">
-            <h1>Profile</h1>
             <h2>Name: {{ userData.name }}</h2>
             <h2>SSN: {{ userData.socialsecurity }}</h2>
             <h2>Started: {{ userData.startdate }}</h2>
             <h2>Phonenr: {{ userData.cellphone }}</h2>
             <h2>Email: {{ userData.email }}</h2>
-            <button type="edit" class="btn btn-primary btn-lg"><a class="edit-button" href="{% url 'edit_profile' %}">Edit Profile</a></button>
-
+            <a class="btn btn-primary btn-lg edit-button" href="{% url 'edit_profile' %}">Edit Profile</a>
             </div>
         </div>
         <div class="col">
-            <div class="card">
             <h1><img class="rounded-circle user-photo" src="{{userData.profilepicture}}"></h1>
-            <button type="Edit" class="btn btn-primary btn-lg"><a class="edit-button" href="{% url 'edit_image' %}">Change picture</a></button>
-            </div>
+            <a class="btn btn-primary btn-lg edit-button" href="{% url 'edit_image' %}">Change picture</a>
         </div>
         <div class="col">
+            <h1>&nbsp</h1>
+            <div class="card">
+                <div class="card-header">
+                <h1 class="card-title">Recently viewed</h1>
+                    </div>
+            <div class="card-body">
             Stuff on a screen
+            </div>
+            </div>
         </div>
     </div>
 {% endblock %}
