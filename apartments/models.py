@@ -14,6 +14,7 @@ class Apartment(models.Model):
     bedrooms = models.IntegerField(max_length=2)
     size = models.IntegerField(max_length=4)
     price = models.IntegerField(max_length=9)
+    description = models.CharField(max_length=255, default="description")
     agentid = models.ForeignKey(Agent, on_delete=models.CASCADE)
     def __str__(self):
         return self.location
