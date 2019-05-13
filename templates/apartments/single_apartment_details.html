@@ -1,8 +1,26 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
+    <script src="{% static 'js/single_apartment_details.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/single_apartment_details.css' %}">
+    <div class="container information-page">
+        <div class="row">
+            <h1>{{ Apartment.address }}</h1>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-8">
+                <img class="mainImage" src="{{ Apartment.apartmentimage_set.first }}"/>
+            </div>
+            <div class="col-md-3">
+                <img class="interiorImage" src="{{ Apartment.apartmentimage_set.first }}"/>
+                <img class="interiorImage" src="{{ Apartment.apartmentimage_set.first }}"/>
+                <img class="interiorImage" src="{{ Apartment.apartmentimage_set.first }}"/>
+            </div>
 
-    <h1>{{ Apartment.address }}</h1>
-    <h5>{{ Apartment.location }}</h5>
+            </div>
+        </div>
+    </div>
 
 
 {% endblock %}
