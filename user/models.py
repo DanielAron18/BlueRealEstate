@@ -1,11 +1,12 @@
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
-
+from django.contrib.auth.models import User
 
 # Model for User.
 
 
 class User(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     socialsecurity = models.CharField(max_length=255)
     username = models.CharField(max_length=12)
