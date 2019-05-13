@@ -7,9 +7,6 @@
     /*background-image: linear-gradient(to right, #3099ff, #3b9eff, #45a3fe, #4fa7fe, #58acfd);*/
 }
 
-body {
-    height: 200rem;
-}
 
 @media only screen and (min-width: 992px) {
 

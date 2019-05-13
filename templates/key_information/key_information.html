@@ -1,7 +1,21 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
+    <link rel="stylesheet" href="{% static 'css/key_information.css' %}">
+    <div class="container information-page">
+        <div class="information-image">
+            <img src="{% static 'images/information_logo.png' %}" width="10%" height="10%">
+        </div>
+        <form id="messageForm" name="messageForm" method="post">{% csrf_token %}
+            <h3>Key Information</h3>
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Location</h4>
+                        <p>Blue Real Estate is located in <b>Bláagata 3, 104 Reykjavík, Iceland</b></p>
+                </div>
+            </div>
+        </form>
+</div>
 
-    <h1>KEY INFORMATION PAGE</h1>
 
 {% endblock %}
