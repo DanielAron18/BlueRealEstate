@@ -14,3 +14,13 @@ class UserForm(ModelForm):
             'email': widgets.TextInput(attrs={'class': 'form-control'}),
             'profilepicture': widgets.TextInput(attrs={'class': 'form-control'}),
         }
+
+
+class ImageForm(ModelForm):
+    class Meta:
+        model = User
+        exclude = ['id', 'user', 'username', 'password', 'searchhistory', 'name', 'socialsecurity', 'startdate',
+                   'cellphone', 'email']
+        widgets = {
+            'profilepicture': widgets.TextInput(attrs={'class': 'form-control'}),
+        }

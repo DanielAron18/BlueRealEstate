@@ -1,6 +1,6 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
-from user.forms.profile_form import UserForm
+from user.forms.profile_form import UserForm, ImageForm
 from user.models import User
 
 # Create your views here.
@@ -11,7 +11,10 @@ def log_in_index(request):
 
 
 def profile_index(request):
-    user = User.objects.get(user_id=request.user.id)
+    try:
+        user = User.objects.get(user_id=request.user.id)
+    except:
+        user = None
     return render(request, "user/user_profile.html", {
         'userData': user
     })
@@ -31,6 +34,19 @@ def edit_profile_index(request):
     else:
         return render(request, 'user/edit_profile.html', {
             'form': UserForm(instance=profile)
+        })
+
+
+def edit_image_index(request):
+    profile = User.objects.filter(user=request).first()
+    if request.method == 'POST':
+        form = ImageForm(instance=profile, data=request.POST)
+        if form.is_valid():
+            profile.save()
+            return redirect("profile")
+    else:
+        return render(request, 'user/edit_picture.html.html', {
+            'form': ImageForm(instance=profile)
         })
 
 
