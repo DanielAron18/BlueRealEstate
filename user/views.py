@@ -11,23 +11,24 @@ def log_in_index(request):
 
 
 def profile_index(request):
-    return render(request, "user/user_profile.html")
+    user = User.objects.get(user_id=request.user.id)
+    return render(request, "user/user_profile.html", {
+        'userData': user
+    })
 
 
 def edit_profile_index(request):
     profile = User.objects.filter(user=request.user).first()
-    print(2)
     if request.method == 'POST':
         form = UserForm(instance=profile, data=request.POST)
-        print(3)
         if form.is_valid():
+            form.username = request.username
+            form.password = request.password
             profile = form.save(commit=False)
             profile.user = request.user
             profile.save()
-            print(4)
             return redirect("profile")
     else:
-        print(5)
         return render(request, 'user/edit_profile.html', {
             'form': UserForm(instance=profile)
         })
