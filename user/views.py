@@ -38,14 +38,14 @@ def edit_profile_index(request):
 
 
 def edit_image_index(request):
-    profile = User.objects.filter(user=request).first()
+    profile = User.objects.filter(user=request.user).first()
     if request.method == 'POST':
         form = ImageForm(instance=profile, data=request.POST)
         if form.is_valid():
-            profile.save()
+            form.save()
             return redirect("profile")
     else:
-        return render(request, 'user/edit_picture.html.html', {
+        return render(request, 'user/edit_picture.html', {
             'form': ImageForm(instance=profile)
         })
 
