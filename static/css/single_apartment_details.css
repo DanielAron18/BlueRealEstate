@@ -1,0 +1,32 @@
+.container .information-page {
+    margin-top: -10%;
+}
+.information-page{
+    background: #fff;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 70%;
+}
+.information-page form{
+    padding: 14%;
+}
+.information-page form .row{
+    margin-bottom: -7%;
+}
+.information-page h1{
+    margin-bottom: 8%;
+    margin-top: -10%;
+    text-align: center;
+    color: #0062cc;
+}
+* {
+  box-sizing: border-box;
+}
+
+.mainImage {
+    width: 100%;
+}
+
+.interiorImage {
+    width: 100%;
+}
