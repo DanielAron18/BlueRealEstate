@@ -1,8 +1,19 @@
 .row {
     text-align: center;
+    margin: 3%;
 }
 .user-photo {
     width: 300px;
     height: 300px;
     padding: 10px;
+}
+
+.edit-button {
+    color:white;
+    text-decoration: none;
+}
+
+.edit-button:hover {
+    text-decoration: none;
+    color:white;
 }
