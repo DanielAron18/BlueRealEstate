@@ -24,14 +24,14 @@
     <!-- Main Navigation bar -->
     <nav id="main_nav" class="navbar sticky-top navbar-light">
         <a href="{% url 'front_page' %}"><img src="{% static 'images/logo.png' %}", height=50px></a>
-        <a href="{% url 'front_page' %}"><h5 style="font-size: 1rem">Home10</h5></a>
+        <a href="{% url 'front_page' %}"><h5 style="font-size: 1rem">Home</h5></a>
         <a href="{% url 'about_us' %}"><h5 style="font-size: 1rem">About us</h5></a>
         <a href="{% url 'location' %}"><h5 style="font-size: 1rem">Location</h5></a>
         <a href="{% url 'contact_us' %}"><h5 style="font-size: 1rem">Contact us</h5></a>
         <a href="{% url 'key_info' %}"><h5 style="font-size: 1rem">Key Info</h5></a>
         <a href="{% url 'why_blue' %}"><h5 style="font-size: 1rem">Why Blue?</h5></a>
         {% if user.is_authenticated %}
-            <a href="{% url 'user_profile' %}"><img src="{% static 'images/agent_logo.png' %}" style="height: 50px;"></a>
+            <a href="{% url 'profile' %}"><img src="{% static 'images/agent_logo.png' %}" style="height: 50px;"></a>
             <a href="{% url 'log_out' %}" style="font-size: 0.5rem;"><h5>Logout</h5></a>
             {% else %}
             <a href="{% url 'log_in' %}"><h5 style="font-size: 1rem">Log in</h5></a>
@@ -41,12 +41,15 @@
     <!-- Mobile Navigation bar -->
     <!-- Top Navigation Menu -->
     <div class="topnav_mobile">
-      <a href="#home" class="active">Logo</a>
+      <a href="#home" id="mob_logo">Blue Real Estate</a>
       <!-- Navigation links (hidden by default) -->
       <div id="myLinks">
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
+          <a href="{% url 'front_page' %}">Home</a>
+          <a href="{% url 'about_us' %}">About us</a>
+          <a href="{% url 'contact_us' %}">Contact us</a>
+          <a href="{% url 'key_info' %}">Key Info</a>
+          <a href="{% url 'why_blue' %}">Why Blue?</a>
+          <a href="{% url 'location' %}">Location</a>
       </div>
       <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
       <a class="icon" onclick="showHideNav()">
@@ -68,26 +71,18 @@
                 </div>
                 <div class="col-sm-2">
                     <h5>Get started</h5>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Sign up</a></li>
-                        <li><a href="#">Downloads</a></li>
+                    <ul class="footerLinks">
+                        <li><a href="{% url 'front_page' %}">Home</a></li>
+                        <li><a href="{% url 'location' %}">Location</a></li>
+                        <li><a href="{% url 'contact_us' %}">Contact us</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-2">
                     <h5>About us</h5>
-                    <ul>
-                        <li><a href="#">Company Information</a></li>
-                        <li><a href="#">Contact us</a></li>
-                        <li><a href="#">Reviews</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2">
-                    <h5>Support</h5>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Help desk</a></li>
-                        <li><a href="#">Forums</a></li>
+                    <ul class="footerLinks">
+                        <li><a href="{% url 'about_us' %}">About us</a></li>
+                        <li><a href="{% url 'key_info' %}">Key Info</a></li>
+                        <li><a href="{% url 'why_blue' %}">Why Blue?</a></li>
                     </ul>
                 </div>
                 <div class="col-sm-3">
@@ -96,7 +91,11 @@
                         <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
                         <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
                     </div>
-                    <button type="button" class="btn btn-default">Contact us</button>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'log_out' %}" class="footerLinks">Logout</a>
+                    {% else %}
+                        <a href="{% url 'log_in' %}" class="footerLinks">Log in</a>
+                    {% endif %}
                 </div>
             </div>
         </div>

@@ -26,4 +26,5 @@ urlpatterns = [
     path('why_blue/', include("why_blue.urls")),
     path('location/', include("location.urls")),
     path('user/', include("user.urls")),
+    path('apartment_details/', include("apartments.urls")),
 ]

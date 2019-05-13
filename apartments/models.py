@@ -15,9 +15,8 @@ class Apartment(models.Model):
     size = models.IntegerField(max_length=4)
     price = models.IntegerField(max_length=9)
     agentid = models.ForeignKey(Agent, on_delete=models.CASCADE)
-
     def __str__(self):
-        return self.postalcode + "\n" + self.location + "\n" + self.address + "\n" + str(self.bedrooms) + " herbergja " + str(self.size) + " fermetra"
+        return self.location
 
 
 
@@ -25,4 +24,7 @@ class ApartmentImage(models.Model):
     image = models.CharField(max_length=999)
     mainimage = models.BooleanField()
     apartment = models.ForeignKey(Apartment, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.image
 
