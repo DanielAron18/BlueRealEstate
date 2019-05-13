@@ -17,3 +17,18 @@
     text-decoration: none;
     color:white;
 }
+
+#h1-profile {
+    color: #3697fe;
+    text-align: left;
+    margin-left: 3%;
+}
+.card {
+    margin: 3%;
+    padding: 3%;
+}
+
+.card-header {
+    color: white;
+    background-color: #3697fe;
+}
