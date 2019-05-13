@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <link href="{% static 'css/log_in.css' %}">
+
+    <h1>Profile</h1>
+    <div class="wrapper"></div>
+        <form class="wrapper" action="{% url 'edit_image' %}" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" class="btn btn-primary" value="Update">
+        </form>
+    </div>
+
+{% endblock %}
