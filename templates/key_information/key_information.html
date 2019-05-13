@@ -6,6 +6,7 @@
         <div class="information-image">
             <img src="{% static 'images/information_logo.png' %}" width="10%" height="10%">
         </div>
+
         <form id="messageForm" name="messageForm" method="post">{% csrf_token %}
             <h3>Key Information</h3>
             <div class="row">
@@ -15,13 +16,52 @@
                         <div class="card-header" id="headingOne">
                           <h2 class="mb-0">
                             <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              Collapsible Group Item #1
+                              <h4>Different types of Real Estate</h4>
                             </button>
                           </h2>
                         </div>
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                           <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            <ol>
+                                <h4>
+                                    <li>
+                                        Residential real estate: </h4>
+                                        <ul>
+                                            <li>
+                                                These includes both new construction and resale homes. The most common category is single-family homes. There are also condominiums, co-ops, townhouses, duplexes, triple-deckers, quadplexes, high-value homes and vacation homes.<br>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                <h4>
+                                    <li>
+                                        Commercial real estate: </h4>
+                                        <ul>
+                                            <li>
+                                                These includes shopping centers and strip malls, medical and educational buildings, hotels and offices. Apartment buildings are often considered commercial, even though they are used for residences. That’s because they are owned to produce income.<br>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                <h4>
+                                    <li>
+                                        Industrial real estate: </h4>
+                                        <ul>
+                                            <li>
+                                                These includes manufacturing buildings and property, as well as warehouses. The buildings can be used for research, production, storage and distribution of goods. Some buildings that distribute goods are considered commercial real estate. The classification is important because the zoning, construction and sales are handled differently.<br>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                                       <h4>
+                                    <li>
+                                        Land: </h4>
+                                        <ul>
+                                            <li>
+                                                These includes vacant land, working farms and ranches. The subcategories within vacant land include undeveloped, early development or reuse, subdivision and site assembly.<br>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                            </ol>
                           </div>
                         </div>
                       </div>
@@ -29,13 +69,69 @@
                         <div class="card-header" id="headingTwo">
                           <h2 class="mb-0">
                             <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                              Collapsible Group Item #2
+                              <h4>Tariff - Valid from July 1, 2016</h4>
                             </button>
                           </h2>
                         </div>
                         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                           <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                              <ol>
+                                  <h4>
+                                      <li>
+                                          General on the Commission.</h4>
+                                      <ul>
+                                          <li>
+                                              The following tariff is a guide to services and applies unless otherwise agreed. Sales fees are negotiable and based on market area assessments, liquidity and closer agreement.
+                                          </li>
+                                      </ul>
+                                      </li>
+                                  <h4>
+                                      <li>
+                                          Buying and selling.</h4>
+                                        <ul>
+                                            <li>
+                                                The sale of real estate and listed vessels in the monopoly is 1.95% of sales price plus value added.
+                                            </li>
+                                            <li>
+                                                Sales by companies and businesses 5% of total sales, including stock plus VAT.
+                                            </li>
+                                        </ul>
+                                      </li>
+                                  <h4>
+                                      <li>
+                                          Commission for Rental Agency.  </h4>
+                                        <ul>
+                                            <li>
+                                                A commission for web-based advertising is included.
+                                            </li>
+                                            <li>
+                                                For general advice and follow-up, e.g. due to default, is paid according to the hourly rate.
+                                            </li>
+                                        </ul>
+                                      </li>
+                                  <h4>
+                                      <li>
+                                          Inspection and valuation of a property.</h4>
+                                        <ul>
+                                            <li>
+                                                Written valuation of apartments is kr. 29.900.
+                                            </li>
+                                            <li>
+                                                Written valuation of serial and detached houses is 39.900.
+                                            </li>
+                                        </ul>
+                                  <h4>
+                                      <li>
+                                          Various documentation and advice.</h4>
+                                        <ul>
+                                            <li>
+                                                Remuneration for review and examination of contracts and documents for the sale or purchase of real estate and ships or other assets that a realtor, lawyer or other person has done is according to the hourly rate.
+                                            </li>
+                                            <li>
+                                                Remuneration for advice, guidance and attendance is according to the hourly rate.
+                                            </li>
+                                        </ul>
+                              </ol>
                           </div>
                         </div>
                       </div>
@@ -43,33 +139,46 @@
                         <div class="card-header" id="headingThree">
                           <h2 class="mb-0">
                             <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                              Collapsible Group Item #3
+                                <h4>Various provisions and Hourly Rates.</h4>
                             </button>
                           </h2>
                         </div>
                         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                           <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                              <ol>
+                                  <h4>
+                                      <li>Various provisions.</h4>
+                                        <ul>
+                                            <li>
+                                                Buyers commission (processing fee). Buyer of real estate pays fixed fee kr. 59,000, - for the real estate agent's services.
+                                            </li>
+                                            <li>
+                                                The cost of making and publishing advertisements shall be paid by the customer in accordance with the tariff of the advertising medium in question at any given time.
+                                            </li>
+                                        </ul>
+                                      </li>
+                                  <h4>
+                                      <li>Hourly Rates.</h4>
+                                        <ul>
+                                            <li>
+                                                A general time fee is ISK. 15.000
+                                            </li>
+                                            <li>
+                                                The hourly rate of a certified real estate and shipping company is ISK. 20,000.
+                                            </li>
+                                        </ul>
+                                      </li>
+                              </ol>
                           </div>
                         </div>
                       </div>
-                        <div class="card">
-                        <div class="card-header" id="headingOne">
-                          <h2 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              Collapsible Group Item #1
-                            </button>
-                          </h2>
-                        </div>
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                          <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                          </div>
-                        </div>
-                      </div>
+
+
+
                     </div>
                 </div>
             </div>
+
         </form>
     </div>
 

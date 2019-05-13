@@ -50,3 +50,7 @@
     border: none;
     cursor: pointer;
 }
+
+.mb-0 {
+    text-align: center;
+}
