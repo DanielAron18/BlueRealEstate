@@ -22,10 +22,10 @@ def edit_profile_index(request):
     if request.method == 'POST':
         form = UserForm(instance=profile, data=request.POST)
         if form.is_valid():
-            form.username = request.username
-            form.password = request.password
             profile = form.save(commit=False)
             profile.user = request.user
+            profile.username = request.user.username
+            profile.password = request.user.password
             profile.save()
             return redirect("profile")
     else:
