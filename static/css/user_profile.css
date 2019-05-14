@@ -11,11 +11,14 @@
 .edit-button {
     color:white;
     text-decoration: none;
+    margin-top: 3%;
+    background-color: #3697fe;
 }
 
 .edit-button:hover {
     text-decoration: none;
     color:white;
+    margin-top: 3%;
 }
 
 #h1-profile {
