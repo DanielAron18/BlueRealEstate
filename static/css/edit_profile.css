@@ -1,0 +1,21 @@
+#h1-profile {
+    color: #3697fe;
+    text-align: left;
+}
+
+.update {
+    margin-top: 3%;
+}
+
+.marketing {
+    text-align: center;
+    margin: auto;
+    margin-top: 3%;
+}
+.card {
+    padding: 2%;
+    text-align: center;
+    max-width: 90%;
+    margin: auto;
+    margin-bottom: 5%;
+}
