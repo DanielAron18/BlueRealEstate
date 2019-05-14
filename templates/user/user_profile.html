@@ -28,10 +28,17 @@
             <h1>&nbsp</h1>
             <div class="card">
                 <div class="card-header">
-                <h1 class="card-title">Recently viewed</h1>
-                    </div>
+                    <h1 class="card-title">Recently viewed</h1>
+                </div>
             <div class="card-body">
-            Stuff on a screen
+                {% if request.user.is_superuser == True %}
+                    <h2>Your apartments</h2>
+                    <a class="btn btn-primary btn-lg edit-button" href="{% url 'add_apartment' %}">Add Apartment</a>
+                    {% else %}
+                    <h2>Recently viewd</h2>
+                    <p>fleira til að koma.</p>
+                {% endif %}
+                <h2></h2>
             </div>
             </div>
         </div>
