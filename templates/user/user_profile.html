@@ -8,15 +8,15 @@
         <div class="col">
             <h1 id="h1-profile">Profile</h1>
             <div class="card">
-            <i class="fa fa-user" aria-hidden="true"></i><h2>{{ userData.name }}</h2>
+            <h2><i class="fa fa-user" aria-hidden="true"></i> {{ userData.name }}</h2>
             <hr>
             <h2>{{ userData.socialsecurity }}</h2>
             <hr>
             <h2>Started: {{ userData.startdate }}</h2>
             <hr>
-            <h2>Phonenr: {{ userData.cellphone }}</h2>
+            <h2><i class="fa fa-phone" aria-hidden="true"></i> {{ userData.cellphone }}</h2>
             <hr>
-            <h2>Email: {{ userData.email }}</h2>
+            <h2><i class="fa fa-envelope" aria-hidden="true"></i> {{ userData.email }}</h2>
             <a class="btn btn-primary btn-lg edit-button" href="{% url 'edit_profile' %}">Edit Profile</a>
             </div>
         </div>
