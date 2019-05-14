@@ -5,8 +5,8 @@
 {% block content %}
     <link rel="stylesheet" href="{% static 'css/edit_profile.css' %}">
     <div class="container marketing">
-    <div class="card">
     <h1 id="h1-profile">Profile</h1>
+    <div class="card">
         <p>Change the link in the following window to update your profile picture.</p>
         <form class="wrapper" action="{% url 'edit_image' %}" method="POST">
             {% csrf_token %}
