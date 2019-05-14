@@ -3,15 +3,16 @@
 {% load static %}
 
 {% block content %}
-    <link href="{% static 'css/log_in.css' %}">
-
-    <h1>Profile</h1>
-    <div class="wrapper"></div>
+    <link rel="stylesheet" href="{% static 'css/edit_profile.css' %}">
+    <div class="container marketing">
+    <div class="card">
+    <h1 id="h1-profile">Profile</h1>
+        <p>Change the link in the following window to update your profile picture.</p>
         <form class="wrapper" action="{% url 'edit_image' %}" method="POST">
             {% csrf_token %}
             {{ form }}
-            <input type="submit" class="btn btn-primary" value="Update">
+            <input type="submit" class="btn btn-primary update" value="Update">
         </form>
     </div>
-
+    </div>
 {% endblock %}
