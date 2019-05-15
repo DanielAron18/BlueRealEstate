@@ -1,4 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+
+from apartments.forms.add_apartment import AddApartmentForm
 from apartments.models import Apartment
 from django.contrib.postgres.search import SearchVector
 from index.forms import SearchForm
@@ -16,6 +18,7 @@ def get_apartment_by_id(request, id):
     })
 
 
+<<<<<<< HEAD
 def order_by_price(request):
     context = {'OrderByPrice': Apartment.objects.all().order_by('price')}
     return render(request, 'apartments/order_by_price.html', context)
@@ -41,3 +44,18 @@ def zip_location_fields(request):
     else:
         return render(request, 'apartments/search_zip.html')
 
+=======
+def add_apartment(request):
+    profile = Apartment.objects.filter().first()
+    if request.method == 'post':
+        form = AddApartmentForm(instance=profile, data=request.POST)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.agentid = request.user.id
+            profile.save()
+            return redirect('profile')
+    else:
+        return render(request, 'apartments/add_apartment.html', {
+            'form': AddApartmentForm(instance=profile)
+        })
+>>>>>>> 7a8120f154fea8330ecd9f334599ced6e6957676

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <form class="wrapper" action="{% url 'edit_image' %}" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" class="btn btn-primary update" value="Update">
+    </form>
+
+
+{% endblock %}

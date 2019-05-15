@@ -21,17 +21,28 @@
             </div>
         </div>
         <div class="col">
-            <h1><img class="rounded-circle user-photo" src="{{userData.profilepicture}}"></h1>
+            {% if userData.profilepicture != "" %}
+                <h1><img class="rounded-circle user-photo" src="{{userData.profilepicture}}"></h1>
+                {% else %}
+                <h1><img class="rounded-circle user-photo" src="{% static 'images/agent_logo.png' %}"></h1>
+            {% endif %}
             <a class="btn btn-primary btn-lg edit-button" href="{% url 'edit_image' %}">Change picture</a>
         </div>
         <div class="col">
             <h1>&nbsp</h1>
             <div class="card">
                 <div class="card-header">
-                <h1 class="card-title">Recently viewed</h1>
-                    </div>
+                    <h1 class="card-title">Recently viewed</h1>
+                </div>
             <div class="card-body">
-            Stuff on a screen
+                {% if request.user.is_superuser == True %}
+                    <h2>Your apartments</h2>
+                    <a class="btn btn-primary btn-lg edit-button" href="{% url 'add_apartment' %}">Add Apartment</a>
+                    {% else %}
+                    <h2>Recently viewd</h2>
+                    <p>fleira til að koma.</p>
+                {% endif %}
+                <h2></h2>
             </div>
             </div>
         </div>
