@@ -73,33 +73,33 @@
                         <img src="{% static 'images/logo.png' %}", height="100px">
                     </a>
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-3">
                     <h5>Get started</h5>
-                    <ul class="footerLinks">
-                        <li><a href="{% url 'front_page' %}">Home</a></li>
-                        <li><a href="{% url 'location' %}">Location</a></li>
-                        <li><a href="{% url 'contact_us' %}">Contact us</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-2">
-                    <h5>About us</h5>
-                    <ul class="footerLinks">
-                        <li><a href="{% url 'about_us' %}">About us</a></li>
-                        <li><a href="{% url 'key_info' %}">Key Info</a></li>
-                        <li><a href="{% url 'why_blue' %}">Why Blue?</a></li>
-                    </ul>
+                        <a href="{% url 'front_page' %}">Home</a><br>
+                        <a href="{% url 'location' %}">Location</a><br>
+                        <a href="{% url 'contact_us' %}">Contact us</a>
+
                 </div>
                 <div class="col-sm-3">
-                    <div class="social-networks">
-                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                        <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
-                    </div>
+                    <h5>About us</h5>
+                        <a href="{% url 'about_us' %}">About us</a><br>
+                        <a href="{% url 'key_info' %}">Key Info</a><br>
+                        <a href="{% url 'why_blue' %}">Why Blue?</a>
+
+                </div>
+                <div class="col-sm-2">
+                    <h5>Account</h5>
                     {% if user.is_authenticated %}
+                        <a href="{% url 'profile' %}" class="footerLinks">Profile</a><br>
                         <a href="{% url 'log_out' %}" class="footerLinks">Logout</a>
                     {% else %}
                         <a href="{% url 'log_in' %}" class="footerLinks">Log in</a>
                     {% endif %}
+                <div class="social-networks">
+                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
