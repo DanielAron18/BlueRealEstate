@@ -52,6 +52,7 @@ def zip_location_fields(request):
     else:
         return render(request, 'apartments/search_zip.html')
 
+
 def add_apartment(request):
     profile = Apartment.objects.filter().first()
     if request.method == 'post':
@@ -65,3 +66,15 @@ def add_apartment(request):
         return render(request, 'apartments/add_apartment.html', {
             'form': AddApartmentForm(instance=profile)
         })
+
+
+def order(request, id):
+    return render(request, 'apartments/order.html', {
+        'Apartment': get_object_or_404(Apartment, pk=id)
+    })
+
+
+def order_confirmation(request, id):
+    return render(request, 'apartments/order_confirmation.html', {
+        'Apartment': get_object_or_404(Apartment, pk=id)
+    })

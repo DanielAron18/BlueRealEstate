@@ -3,9 +3,8 @@
 {% block content %}
     <script src="{% static 'js/single_apartment_details.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/single_apartment_details.css' %}">
-    {% with request.build_absolute_uri as url %}
-    {% endwith %}
     <div class="container information-page">
+    <h1>ORDER CONFIRMATION</h1>
         <div class="row">
             <h1 class="MainHeader">{{ Apartment.address }}, {{ Apartment.postalcode }}  {{ Apartment.location }}</h1>
         </div>
@@ -33,7 +32,7 @@
                 <p>Mortgage options available.</p>
                 <p>20 year plan as low as ...</p>
                 <p>40 year plan as low as ...</p>
-                <input type="submit" id="btnPurchaseApartment" onclick="window.location.href='{{ url }}/order/'" name="btnPurchaseApartment" value="Purchase now" />
+                <input type="submit" id="btnPurchaseApartment" name="btnPurchaseApartment" value="Purchase now" />
 
             </div>
             <div class="col-md-4">

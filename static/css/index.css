@@ -1,4 +1,4 @@
-/*
+                        /*
         Search Field
 */
 
@@ -44,76 +44,6 @@
 
 
 /****************************
-    Aperments window
-*****************************/
-
-#TrendingApartments {
-    display: flex;
-    flex-flow: row wrap;
-    width: 70rem;
-}
-
-.singleapartment {
-    position: relative;
-    border-radius: 0.5rem;
-    height: 27rem;
-    width: 28%;
-    margin: auto;
-    margin: 2%;
-    border: 1px solid #bbbab9;
-    -webkit-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
-    -moz-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
-    box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
-}
-
-/* Div around each apartment */
-#TrendingApartments, #TrendingApartmentsContainer {
-    width: 80rem;
-    margin: 0 auto 5% auto;
-}
-
-#TrendingApartmentsHeader {
-    padding-bottom: 3%;
-}
-
-/* Main images of apartment */
-.apartmentImage {
-    width: 100%;
-    height: 60%;
-    float:right;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-}
-
-/* Apartment price index div*/
-.propPrice {
-    border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    background-color: #3099FF;
-    color: #ffffff;
-    height: 12%;
-}
-
-/* Apartment price*/
-.propPrice h5 {
-    padding-top: 3%;
-}
-
-/* Taka hover decoration af ibúðunum */
-.singleapartment a:hover {
-    text-decoration: none;
-}
-
-/* Zoom þegar hoverað er yfir mynd */
-.singleapartment:hover {
-    transform: scale(1.02);
-}
-
-
-/****************************
        Footer Section
 *****************************/
 
@@ -122,9 +52,82 @@
     list-style-type: none;
 }
 
+#TrendingApartmentsHeader {
+    padding-bottom: 3%;
+    text-align: center;
+    color: #3697fe;
+}
 
 @media only screen and (min-width: 992px) {
     /* Main Content */
+    /****************************
+        Aperments window
+    *****************************/
+
+    #TrendingApartments {
+        display: flex;
+        flex-flow: row wrap;
+        width: 70rem;
+    }
+
+    .singleapartment {
+        position: relative;
+        border-radius: 0.5rem;
+        height: 27rem;
+        width: 28%;
+        margin: auto;
+        margin: 2%;
+        border: 1px solid #bbbab9;
+        -webkit-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+        -moz-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+        box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+    }
+
+    /* Div around each apartment */
+    #TrendingApartments, #TrendingApartmentsContainer {
+        width: 80rem;
+        margin: 0 auto 5% auto;
+    }
+
+    #TrendingApartmentsHeader {
+        padding-bottom: 3%;
+    }
+
+    /* Main images of apartment */
+    .apartmentImage {
+        width: 100%;
+        height: 60%;
+        float:right;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+
+    /* Apartment price index div*/
+    .propPrice {
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        background-color: #3099FF;
+        color: #ffffff;
+        height: 12%;
+    }
+
+    /* Apartment price*/
+    .propPrice h5 {
+        padding-top: 3%;
+    }
+
+    /* Taka hover decoration af ibúðunum */
+    .singleapartment a:hover {
+        text-decoration: none;
+    }
+
+    /* Zoom þegar hoverað er yfir mynd */
+    .singleapartment:hover {
+        transform: scale(1.02);
+    }
 
     /* Box Around all form content*/
     #search {
@@ -162,6 +165,74 @@
 
 /* Ipadar og svipuð tæki */
 @media only screen and (min-width: 600px) and (max-width: 1078px) {
+        /****************************
+        Aperments window
+    *****************************/
+
+    #TrendingApartments {
+        display: flex;
+        flex-flow: row wrap;
+        width: 90%;
+    }
+
+    .singleapartment {
+        position: relative;
+        border-radius: 0.5rem;
+        height: 25rem;
+        width: 45%;
+        margin: auto;
+        margin: 2%;
+        border: 1px solid #bbbab9;
+        -webkit-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+        -moz-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+        box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+    }
+
+    /* Div around each apartment */
+    #TrendingApartments, #TrendingApartmentsContainer {
+        width: 95%;
+        margin: 0 auto 5% auto;
+    }
+
+    #TrendingApartmentsHeader {
+        padding-bottom: 3%;
+    }
+
+    /* Main images of apartment */
+    .apartmentImage {
+        width: 100%;
+        height: 60%;
+        float:right;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+
+    /* Apartment price index div*/
+    .propPrice {
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        background-color: #3099FF;
+        color: #ffffff;
+        height: 12%;
+    }
+
+    /* Apartment price*/
+    .propPrice h5 {
+        padding-top: 3%;
+    }
+
+    /* Taka hover decoration af ibúðunum */
+    .singleapartment a:hover {
+        text-decoration: none;
+    }
+
+    /* Zoom þegar hoverað er yfir mynd */
+    .singleapartment:hover {
+        transform: scale(1.02);
+    }
 
     /* Box Around all form content*/
     #search {
@@ -180,6 +251,73 @@
 
 /* Mobile Skjáir */
 @media only screen and (max-width: 600px) {
+        /****************************
+        Aperments window
+    *****************************/
+
+    #TrendingApartments {
+        display: flex;
+        flex-flow: row wrap;
+        width: 98%;
+    }
+
+    .singleapartment {
+        position: relative;
+        border-radius: 0.5rem;
+        height: 80%;
+        width: 90%;
+        margin: 2% auto 2% auto;
+        border: 1px solid #bbbab9;
+        -webkit-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+        -moz-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+        box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+    }
+
+    /* Div around each apartment */
+    #TrendingApartments, #TrendingApartmentsContainer {
+        width: 100%;
+        margin: 0 auto 5% auto;
+    }
+
+    #TrendingApartmentsHeader {
+        padding-bottom: 3%;
+    }
+
+    /* Main images of apartment */
+    .apartmentImage {
+        width: 100%;
+        height: 60%;
+        float:right;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+
+    /* Apartment price index div*/
+    .propPrice {
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        background-color: #3099FF;
+        color: #ffffff;
+        height: 12%;
+    }
+
+    /* Apartment price*/
+    .propPrice h5 {
+        padding-top: 3%;
+    }
+
+    /* Taka hover decoration af ibúðunum */
+    .singleapartment a:hover {
+        text-decoration: none;
+    }
+
+    /* Zoom þegar hoverað er yfir mynd */
+    .singleapartment:hover {
+        transform: scale(1.02);
+    }
     #search {
         width: 100%;
         margin: 0 0 5% 0;
