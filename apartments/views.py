@@ -18,7 +18,6 @@ def get_apartment_by_id(request, id):
     })
 
 
-<<<<<<< HEAD
 def order_by_price(request):
     context = {'OrderByPrice': Apartment.objects.all().order_by('price')}
     return render(request, 'apartments/order_by_price.html', context)
@@ -44,7 +43,6 @@ def zip_location_fields(request):
     else:
         return render(request, 'apartments/search_zip.html')
 
-=======
 def add_apartment(request):
     profile = Apartment.objects.filter().first()
     if request.method == 'post':
@@ -58,4 +56,3 @@ def add_apartment(request):
         return render(request, 'apartments/add_apartment.html', {
             'form': AddApartmentForm(instance=profile)
         })
->>>>>>> 7a8120f154fea8330ecd9f334599ced6e6957676
