@@ -14,8 +14,10 @@
         FOOTER SECTION
 
 *************************************/
-
-
+.footerLinks {
+    list-style: none;
+    text-align: center;
+}
 
 /*************************************/
 
