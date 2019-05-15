@@ -33,5 +33,5 @@ urlpatterns = [
     path('order_price/', order_by_price, name='order_price'),
     path('order_size/', order_by_size, name='order_size'),
     path('search/', zip_location_fields, name='search'),
-    path('order/', order, name='order'),
+
 ]
