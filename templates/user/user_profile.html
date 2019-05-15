@@ -37,12 +37,14 @@
             <div class="card-body">
                 {% if request.user.is_superuser == True %}
                     <h2>Your apartments</h2>
-                    <a class="btn btn-primary btn-lg edit-button" href="{% url 'add_apartment' %}">Add Apartment</a>
+                        <a class="btn btn-primary btn-lg edit-button" href="{% url 'add_apartment' %}">Add Apartment</a>
                     {% else %}
-                    <h2>Recently viewd</h2>
-                    <p>fleira til að koma.</p>
+                    {% for apartment in apartments %}
+                        {% url 'apartment_details' apartment.id as the_url %}
+                        <a href="{{ the_url }}">{{ apartment.address }}</a>
+                        <p>{{ apartment.price }}.kr</p>
+                    {% endfor %}
                 {% endif %}
-                <h2></h2>
             </div>
             </div>
         </div>

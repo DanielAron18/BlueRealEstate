@@ -22,6 +22,9 @@ def get_apartment_by_id(request, id):
         if user.searchhistory:
             user.searchhistory.append(id)
             user.save()
+        else:
+            user.searchhistory = [id]
+            user.save()
     return render(request, 'apartments/single_apartment_details.html', {
         'Apartment': get_object_or_404(Apartment, pk=id)
     })
@@ -51,7 +54,6 @@ def zip_location_fields(request):
         return render(request, 'apartments/search_zip.html', context)
     else:
         return render(request, 'apartments/search_zip.html')
-
 
 def add_apartment(request):
     profile = Apartment.objects.filter().first()
