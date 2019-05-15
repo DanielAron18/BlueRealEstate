@@ -1,0 +1,365 @@
+                        /*
+        Search Field
+*/
+
+/* Box inside the #search box for content padding */
+.search_field_content {
+    margin: 0 auto 0 auto;
+    height: 80%;
+    width: 90%;
+}
+
+/* The form */
+#search_form {
+    width: 100%;
+    margin: 0 auto 0 auto;
+    padding: 3% 0 3% 8%;
+}
+
+/* boxið utanum Takkana neðst á search forminu  */
+#search_buttons_parameters {
+    padding: 2% 0 0 0;
+}
+
+/* Clasinn á tökkunum */
+.search_drop {
+    margin: 0 2% 0 0;
+}
+
+/* Search takkinn Textinn */
+.search_button p {
+    padding: 0 1em 0 1em;
+    margin: auto;
+}
+
+/* Search takkinn container */
+.col-3.search_btn_container {
+    padding-left: 7%;
+}
+
+.form-control.search_input, .btn.btn-primary.btn-lg.search_button,
+.form-control.zip_input, .form-control.price_input {
+    border-radius: .95rem;
+}
+
+
+/****************************
+       Footer Section
+*****************************/
+
+/* Footer Links */
+.footerLinks li {
+    list-style-type: none;
+}
+
+#TrendingApartmentsHeader {
+    padding-bottom: 3%;
+    text-align: center;
+    color: #3697fe;
+}
+
+@media only screen and (min-width: 992px) {
+    /* Main Content */
+    /****************************
+        Aperments window
+    *****************************/
+
+    #TrendingApartments {
+        display: flex;
+        flex-flow: row wrap;
+        width: 70rem;
+    }
+
+    .singleapartment {
+        position: relative;
+        border-radius: 0.5rem;
+        height: 27rem;
+        width: 28%;
+        margin: auto;
+        margin: 2%;
+        border: 1px solid #bbbab9;
+        -webkit-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+        -moz-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+        box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+    }
+
+    /* Div around each apartment */
+    #TrendingApartments, #TrendingApartmentsContainer {
+        width: 80rem;
+        margin: 0 auto 5% auto;
+    }
+
+    #TrendingApartmentsHeader {
+        padding-bottom: 3%;
+    }
+
+    /* Main images of apartment */
+    .apartmentImage {
+        width: 100%;
+        height: 60%;
+        float:right;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+
+    /* Apartment price index div*/
+    .propPrice {
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        background-color: #3099FF;
+        color: #ffffff;
+        height: 12%;
+    }
+
+    /* Apartment price*/
+    .propPrice h5 {
+        padding-top: 3%;
+    }
+
+    /* Taka hover decoration af ibúðunum */
+    .singleapartment a:hover {
+        text-decoration: none;
+    }
+
+    /* Zoom þegar hoverað er yfir mynd */
+    .singleapartment:hover {
+        transform: scale(1.02);
+    }
+
+    /* Box Around all form content*/
+    #search {
+        display: inline-block;
+        width: 55rem;
+        height: 13rem;
+        margin: 5% auto 5% auto ;
+        -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.41);
+        -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.41);
+        box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.41);
+    }
+
+    #main_content_index {
+        display: flex;
+        height: 100%;
+    }
+
+    #bl_logo {
+        display: inline-block;
+        float: left;
+        width: 15%;
+    }
+
+    #bl_logo_1 {
+        display: inline-block;
+        margin: auto 0 auto 0;
+        float: right;
+        width: 15%;
+    }
+
+    #bl_logo img, #bl_logo_1 img {
+        width: 100%;
+    }
+}
+
+/* Ipadar og svipuð tæki */
+@media only screen and (min-width: 600px) and (max-width: 1078px) {
+        /****************************
+        Aperments window
+    *****************************/
+
+    #TrendingApartments {
+        display: flex;
+        flex-flow: row wrap;
+        width: 90%;
+    }
+
+    .singleapartment {
+        position: relative;
+        border-radius: 0.5rem;
+        height: 25rem;
+        width: 45%;
+        margin: auto;
+        margin: 2%;
+        border: 1px solid #bbbab9;
+        -webkit-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+        -moz-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+        box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+    }
+
+    /* Div around each apartment */
+    #TrendingApartments, #TrendingApartmentsContainer {
+        width: 95%;
+        margin: 0 auto 5% auto;
+    }
+
+    #TrendingApartmentsHeader {
+        padding-bottom: 3%;
+    }
+
+    /* Main images of apartment */
+    .apartmentImage {
+        width: 100%;
+        height: 60%;
+        float:right;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+
+    /* Apartment price index div*/
+    .propPrice {
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        background-color: #3099FF;
+        color: #ffffff;
+        height: 12%;
+    }
+
+    /* Apartment price*/
+    .propPrice h5 {
+        padding-top: 3%;
+    }
+
+    /* Taka hover decoration af ibúðunum */
+    .singleapartment a:hover {
+        text-decoration: none;
+    }
+
+    /* Zoom þegar hoverað er yfir mynd */
+    .singleapartment:hover {
+        transform: scale(1.02);
+    }
+
+    /* Box Around all form content*/
+    #search {
+        width: 95%;
+        margin: 5% 2.5% 5% 2.5%;
+        -webkit-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.41);
+        -moz-box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.41);
+        box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.41);
+    }
+
+    /* Fjarlægir logoið*/
+    #bl_logo, #bl_logo_1 {
+        display: none;
+    }
+}
+
+/* Mobile Skjáir */
+@media only screen and (max-width: 600px) {
+        /****************************
+        Aperments window
+    *****************************/
+
+    #TrendingApartments {
+        display: flex;
+        flex-flow: row wrap;
+        width: 98%;
+    }
+
+    .singleapartment {
+        position: relative;
+        border-radius: 0.5rem;
+        height: 80%;
+        width: 90%;
+        margin: 2% auto 2% auto;
+        border: 1px solid #bbbab9;
+        -webkit-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+        -moz-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+        box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+    }
+
+    /* Div around each apartment */
+    #TrendingApartments, #TrendingApartmentsContainer {
+        width: 100%;
+        margin: 0 auto 5% auto;
+    }
+
+    #TrendingApartmentsHeader {
+        padding-bottom: 3%;
+    }
+
+    /* Main images of apartment */
+    .apartmentImage {
+        width: 100%;
+        height: 60%;
+        float:right;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+    }
+
+    /* Apartment price index div*/
+    .propPrice {
+        border-bottom-left-radius: 0.5rem;
+        border-bottom-right-radius: 0.5rem;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        background-color: #3099FF;
+        color: #ffffff;
+        height: 12%;
+    }
+
+    /* Apartment price*/
+    .propPrice h5 {
+        padding-top: 3%;
+    }
+
+    /* Taka hover decoration af ibúðunum */
+    .singleapartment a:hover {
+        text-decoration: none;
+    }
+
+    /* Zoom þegar hoverað er yfir mynd */
+    .singleapartment:hover {
+        transform: scale(1.02);
+    }
+    #search {
+        width: 100%;
+        margin: 0 0 5% 0;
+        -webkit-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+        -moz-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+        box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
+    }
+
+    .search_button {
+        float: left;
+    }
+
+    #bl_logo, #bl_logo_1 {
+        display: none;
+    }
+
+    /* Search Takkinn */
+    .btn.btn-primary.btn-lg.search_button {
+        width: 4.9rem;
+        height: 3rem;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* Search Takkinn texti */
+    .btn.btn-primary.btn-lg.search_button p {
+        font-size: 14px;
+    }
+
+    /* Drop Down */
+    .btn.btn-primary.search_drop {
+        font-size: 14px;
+    }
+
+    /* Bedrooms Drop downinð*/
+    #bedrooms {
+        margin-top: 1%;
+    }
+    #bedrooms, #size, #type {
+        padding-top: 1%;
+    }
+
+
+}
+
