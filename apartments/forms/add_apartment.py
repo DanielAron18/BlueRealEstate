@@ -1,8 +1,5 @@
 from django.forms import widgets, ModelForm
-
 from apartments.models import Apartment
-from user.models import User
-
 
 class AddApartmentForm(ModelForm):
     class Meta:
