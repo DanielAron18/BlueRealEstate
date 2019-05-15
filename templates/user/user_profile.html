@@ -21,7 +21,11 @@
             </div>
         </div>
         <div class="col">
-            <h1><img class="rounded-circle user-photo" src="{{userData.profilepicture}}"></h1>
+            {% if userData.profilepicture != "" %}
+                <h1><img class="rounded-circle user-photo" src="{{userData.profilepicture}}"></h1>
+                {% else %}
+                <h1><img class="rounded-circle user-photo" src="{% static 'images/agent_logo.png' %}"></h1>
+            {% endif %}
             <a class="btn btn-primary btn-lg edit-button" href="{% url 'edit_image' %}">Change picture</a>
         </div>
         <div class="col">
