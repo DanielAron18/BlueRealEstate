@@ -15,11 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from apartments.views import order_by_price
+from apartments.views import order_by_size
+from apartments.views import zip_location_fields
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("index.urls")),
-    path('index/', include("index.urls")),
+    #path('order_price/', include("index.urls")),
     path('key_information/', include("key_information.urls")),
     path('about_us/', include("about_us.urls")),
     path('contact_us/', include("contact_us.urls")),
@@ -27,4 +30,7 @@ urlpatterns = [
     path('location/', include("location.urls")),
     path('user/', include("user.urls")),
     path('apartment_details/', include("apartments.urls")),
+    path('order_price/', order_by_price, name='order_price'),
+    path('order_size/', order_by_size, name='order_size'),
+    path('search/', zip_location_fields, name='search'),
 ]

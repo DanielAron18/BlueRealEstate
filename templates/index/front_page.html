@@ -10,13 +10,18 @@
             <a href="{% url 'contact_us' %}"><img src="{% static 'images/Advertisement.jpg'%}", style="margin: 2%;"></a>
         </div>
 
+
         <div id="search">
-            <form action="/action_page.php" id="search_form">
+            <!-- Store URL in a variable -->
+            {% with request.build_absolute_uri as url %}
+            {% endwith %}
+            <form action="{{ url }}/search/" method="post" id="search_form">
             <!-- Look for apartment input field -->
             <div class="row">
                 <div class="col-8">
-                    <input class="form-control search_input" type="text" placeholder="Look for apartment..." aria-label="Look for apartment">
+                    <input class="form-control search_input" type="text" placeholder="Search..." aria-label="Look for apartment" name="locationfield">
                 </div>
+
                 <!-- Search takkinn -->
                 <div class="col-3 search_btn_container">
                     <button type="submit" class="btn btn-primary btn-lg search_button"><p>Search</p></button>
@@ -26,43 +31,29 @@
             <!-- zip og Price dálkur -->
             <div class="row">
                 <div class="col-3">
-                    <input class="form-control zip_input" type="text" placeholder="zip" aria-label="zip">
-                </div>
-                <div class="col-5">
-                    <input class="form-control price_input" type="text" placeholder="price" aria-label="price">
+                    <input class="form-control zip_input" type="text" placeholder="zip" aria-label="zip" name="zipfield">
                 </div>
             </div>
 
             <!-- Size, Type, Rooms -->
             <div id="search_buttons_parameters">
-                <select id="size" class="btn btn-primary search_drop" name="size">
-                    <option value="size_default">Size</option>
-                    <option value="0-50FM">0 - 50 fm</option>
-                    <option value="50-100FM">50 - 100 fm</option>
-                    <option value="100-150FM">100 - 150 fm</option>
-                    <option value="150-200FM">150 - 200 fm</option>
-                    <option value="200-250FM">200 - 250 fm</option>
-                    <option value="250-300FM">250 - 300 fm</option>
-                    <option value="300-350FM">350 - 400 fm</option>
-                </select>
-                <select id="type" class="btn btn-primary search_drop" name="type">
-                    <option value="type_default">Type</option>
-                    <option value="townhouse">Townhouse</option>
-                    <option value="duplex">Duplex</option>
-                    <option value="detached_house">Detached House</option>
-                </select>
-                <select id="bedrooms" class="btn btn-primary search_drop" name="bedrooms">
-                   <option value="rooms_default">Bedrooms</option>
-                   <option value="0-1">0 - 1</option>
-                   <option value="1-2">1 - 2</option>
-                   <option value="2-3">2 - 3</option>
-                   <option value="3-4">3 - 4</option>
-                   <option value="4-5">4 - 5</option>
-                   <option value="5-6">5 - 6</option>
-                </select>
+                
+                <!-- Order by price button -->
+                <button id="size" type="button" class="btn btn-primary" name="orderby_price" onclick="window.location.href='{{ url }}/order_price/'">
+                    Order by price
+                </button>
+
+                <!-- Order by size button -->
+                <button id="size" type="button" class="btn btn-primary" name="orderby_price" onclick="window.location.href='{{ url }}/order_size/'">
+                    Order by Size
+                </button>
+                {% csrf_token %}
+                {{ form }}
             </div>
             </form>
             </div>
+
+
             <!-- Advertisement -->
             <div id="bl_logo_1">
                 <a href="{% url 'contact_us' %}"><img src="{% static 'images/Advertisement.jpg'%}", style="margin: 2%;"></a>
@@ -72,9 +63,24 @@
     <div id="TrendingApartmentsContainer">
         <h3 id="TrendingApartmentsHeader">New apartments</h3>
         <div id="TrendingApartments">
-            {% for apartment in apartments %}
+            {% if request.path == '/' %}
+                {% for apartment in apartments %}
                     {% include 'apartments/single_apartment.html' with  apartment=apartment %}
-            {% endfor %}
+                {% endfor %}
+            {% elif request.path == '/order_size/' %}
+                {% for apartment in OrderBySize %}
+                    {% include 'apartments/single_apartment.html' with  apartment=apartment %}
+                {% endfor %}
+            {% elif request.path == '/order_price/' %}
+                {% for apartment in OrderByPrice %}
+                    {% include 'apartments/single_apartment.html' with  apartment=apartment %}
+                {% endfor %}
+                {% elif request.path == '/order_price/' %}
+            {% else %}
+                {% for apartment in ZipOrLocation %}
+                    {% include 'apartments/single_apartment.html' with  apartment=apartment %}
+                {% endfor %}
+            {% endif %}
         </div>
     </div>
 {% endblock %}
