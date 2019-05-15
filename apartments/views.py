@@ -19,7 +19,7 @@ def index(request):
 def get_apartment_by_id(request, id):
     if request.user.is_authenticated:
         user = User.objects.get(user_id=request.user.id)
-        if user.searchhistory
+        if user.searchhistory:
             user.searchhistory.append(id)
             user.save()
     return render(request, 'apartments/single_apartment_details.html', {
