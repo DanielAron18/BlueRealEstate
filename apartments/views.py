@@ -52,6 +52,7 @@ def zip_location_fields(request):
     else:
         return render(request, 'apartments/search_zip.html')
 
+
 def add_apartment(request):
     profile = Apartment.objects.filter().first()
     if request.method == 'post':
