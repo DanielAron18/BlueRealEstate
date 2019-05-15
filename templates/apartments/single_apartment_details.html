@@ -42,6 +42,14 @@
                         <p>Tel: {{ Apartment.agentid.cellphone }}</p>
                         <p>Work: {{ Apartment.agentid.workphone }}</p>
                         <p>Email: {{ Apartment.agentid.email }} </p>
+                        <div class="row" id="stars">
+                            <script>
+                                var starstring = document.createTextNode("⭐".repeat({{ Apartment.agentid.rating }}))
+
+                                document.getElementById('stars').appendChild(starstring)
+
+                            </script>
+                        </div>
                         <p>{{ Apartment.agentid.description }}</p>
 
                     </div>
