@@ -68,3 +68,15 @@ def add_apartment(request):
         return render(request, 'apartments/add_apartment.html', {
             'form': AddApartmentForm(instance=profile)
         })
+
+
+def order(request, id):
+    return render(request, 'apartments/order.html', {
+        'Apartment': get_object_or_404(Apartment, pk=id)
+    })
+
+
+def order_confirmation(request, id):
+    return render(request, 'apartments/order_confirmation.html', {
+        'Apartment': get_object_or_404(Apartment, pk=id)
+    })
