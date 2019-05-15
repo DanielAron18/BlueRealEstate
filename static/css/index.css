@@ -1,4 +1,4 @@
-/*
+                        /*
         Search Field
 */
 
@@ -52,6 +52,11 @@
     list-style-type: none;
 }
 
+#TrendingApartmentsHeader {
+    padding-bottom: 3%;
+    text-align: center;
+    color: #3697fe;
+}
 
 @media only screen and (min-width: 992px) {
     /* Main Content */

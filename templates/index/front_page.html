@@ -16,6 +16,7 @@
             {% with request.build_absolute_uri as url %}
             {% endwith %}
             <form action="{{ url }}/search/" method="post" id="search_form">
+
             <!-- Look for apartment input field -->
             <div class="row">
                 <div class="col-8">
@@ -61,7 +62,7 @@
         </div>
 
     <div id="TrendingApartmentsContainer">
-        <h3 id="TrendingApartmentsHeader">New apartments</h3>
+        <h2 id="TrendingApartmentsHeader">Trending Apartments</h2>
         <div id="TrendingApartments">
             {% if request.path == '/' %}
                 {% for apartment in apartments %}
