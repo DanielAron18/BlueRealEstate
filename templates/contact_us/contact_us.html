@@ -7,8 +7,16 @@
         <div class="contact-image">
             <img src="{% static 'images/contact.png' %}">
         </div>
-        <form id="messageForm" name="messageForm" method="post">{% csrf_token %}
+        <form id="messageForm" name="messageForm" method="POST">
             <h3>Drop Us a Message</h3>
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" class="btn btn-primary update" value="Update">
+        </form>
+    </div>
+
+{% endblock %}
+            <!--
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
@@ -24,14 +32,11 @@
                         <button onclick="HideForm()" id="btnSendMessage" name="btnSendMessage" class="btnContact">Send Message </button>
                     </div>
                 </div>
+
                 <div class="col-md-6">
                     <div class="form-group">
                         <textarea name="txtMsg" id="message" class="form-control" placeholder="Your Message *"></textarea>
                     </div>
                 </div>
             </div>
-        </form>
-</div>
-
-
-{% endblock %}
+            -->
