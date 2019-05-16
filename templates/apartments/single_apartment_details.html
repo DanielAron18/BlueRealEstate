@@ -19,7 +19,7 @@
                 <img class="interiorImage" src="{{ Apartment.apartmentimage_set.last }}"/>
                 <img id="lastinteriorImage" class="interiorImage" src="{{ Apartment.apartmentimage_set.first }}"/>
                 -->
-                {% for image in Apartment.apartmentimage_set.all%}
+                {% for image in Apartment.apartmentimage_set.all %}
                     <img class="interiorImage" src="{{ image }}"/>
                 {% endfor %}
             </div>

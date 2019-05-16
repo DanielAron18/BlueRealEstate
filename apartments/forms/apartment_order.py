@@ -2,7 +2,7 @@ from django.forms import widgets, ModelForm
 from apartments.models import ApartmentOrder
 
 
-class AddApartmentForm(ModelForm):
+class ApartmentOrderForm(ModelForm):
     class Meta:
         model = ApartmentOrder
         exclude = ['id', 'user']
