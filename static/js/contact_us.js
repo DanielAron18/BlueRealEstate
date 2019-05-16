@@ -9,9 +9,7 @@ sendbutton.addEventListener('click', SendMessage, false);*/
 function HideForm() {
     let messageForm = document.getElementById("messageForm")
     messageForm.style.visibility = "hidden"
-    console.log("hello")
-    alert("FOASMFAPNFAOPWNFA")
-    console.log("Hello this worked")
+        /*havar hvernig gengur þessi virkni????*/
 }
 
 function foobar(){
