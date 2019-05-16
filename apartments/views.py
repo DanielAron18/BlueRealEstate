@@ -123,7 +123,7 @@ def order(request, id):
             form = ApartmentOrderForm(data=request.POST)
             if form.is_valid():
                 order = ApartmentOrder()
-                order.user = user.id
+                order.user = request.user
                 order.cardholdername = request.POST['cardholdername']
                 order.cardnumber = request.POST['cardnumber']
                 order.exp = request.POST['exp']
