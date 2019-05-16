@@ -19,6 +19,7 @@ from apartments.views import order_by_price
 from apartments.views import order_by_size
 from apartments.views import zip_location_fields
 from apartments.views import order, order_confirmation
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("index.urls")),
@@ -37,4 +38,5 @@ urlpatterns = [
     path('order_size/', order_by_size, name='order_size'),
     path('search/', zip_location_fields, name='search'),
     path('order/', order, name='order'),
+    path('apartment_details/agent/', include("agent.urls")),
 ]
