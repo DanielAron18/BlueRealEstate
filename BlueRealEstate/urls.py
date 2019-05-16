@@ -37,6 +37,10 @@ urlpatterns = [
     path('order_price/', order_by_price, name='order_price'),
     path('order_size/', order_by_size, name='order_size'),
     path('search/', zip_location_fields, name='search'),
+<<<<<<< HEAD
     path('order/', order, name='order'),
     path('apartment_details/agent/', include("agent.urls")),
+=======
+
+>>>>>>> 345a80069d730b437fd8532e50a832e007ec8d3f
 ]

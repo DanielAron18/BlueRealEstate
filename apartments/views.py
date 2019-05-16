@@ -12,8 +12,16 @@ from user.models import User
 
 
 def index(request):
-    context = {'Apartments': Apartment.objects.all()}
-    return render(request, 'apartments/single_apartment.html', context)
+    if request.user.is_authenticated:
+        user = User.objects.get(user_id=request.user.id)
+        return render(request, 'apartments/single_apartment.html', {
+            'Apartments': Apartment.objects.all(),
+            'UserData': user.profilepicture
+        })
+    else:
+        return render(request, 'apartments/single_apartment.html', {
+            'Apartments': Apartment.objects.all()
+        })
 
 
 def get_apartment_by_id(request, id):
@@ -22,36 +30,76 @@ def get_apartment_by_id(request, id):
         if user.searchhistory:
             user.searchhistory.append(id)
             user.save()
-    return render(request, 'apartments/single_apartment_details.html', {
-        'Apartment': get_object_or_404(Apartment, pk=id)
-    })
+        else:
+            user.searchhistory = [id]
+            user.save()
+        return render(request, 'apartments/single_apartment_details.html', {
+            'Apartment': get_object_or_404(Apartment, pk=id),
+            'UserData': user.profilepicture
+        })
+    else:
+        return render(request, 'apartments/single_apartment_details.html', {
+            'Apartment': get_object_or_404(Apartment, pk=id)
+        })
 
 
 def order_by_price(request):
-    context = {'OrderByPrice': Apartment.objects.all().order_by('price')}
-    return render(request, 'apartments/order_by_price.html', context)
+    if request.user.is_authenticated:
+        user = User.objects.get(user_id=request.user.id)
+        return render(request, "apartments/order_by_price.html", {
+            'OrderByPrice': Apartment.objects.all().order_by('price'),
+            'UserData': user.profilepicture,
+        })
+    else:
+        return render(request, 'apartments/order_by_price.html', {
+            'OrderByPrice': Apartment.objects.all().order_by('price')
+        })
 
 
 def order_by_size(request):
-    context = {'OrderBySize': Apartment.objects.all().order_by('size')}
-    return render(request, 'apartments/order_by_size.html', context)
+    if request.user.is_authenticated:
+        user = User.objects.get(user_id=request.user.id)
+        return render(request, 'apartments/order_by_size.html', {
+            'OrderBySize': Apartment.objects.all().order_by('size'),
+            'UserData': user.profilepicture,
+        })
+    else:
+        return render(request, 'apartments/order_by_size.html', {
+            'OrderBySize': Apartment.objects.all().order_by('size')
+        })
 
 
 def zip_location_fields(request):
     zip_front = request.POST['zipfield']
     location = request.POST['locationfield'].lower()
-    if zip_front != '' and location == '':
-        context = {'ZipOrLocation': Apartment.objects.filter(postalcode=zip_front)}
-        return render(request, 'apartments/search_zip.html', context)
-    elif location != '' and zip_front == '':
-        location = location.capitalize()
-        context = {'ZipOrLocation': Apartment.objects.annotate(
-            search=SearchVector('location', 'address', 'description')).filter(search=location)
-        }
-        return render(request, 'apartments/search_zip.html', context)
+    if request.user.is_authenticated:
+        user = User.objects.get(user_id=request.user.id)
+        zip_front = request.POST['zipfield']
+        location = request.POST['locationfield'].lower()
+        if zip_front != '' and location == '':
+            context = {'ZipOrLocation': Apartment.objects.filter(postalcode=zip_front),
+                       'UserData': user.profilepicture}
+            return render(request, 'apartments/search_zip.html', context)
+        elif location != '' and zip_front == '':
+            location = location.capitalize()
+            context = {'ZipOrLocation': Apartment.objects.annotate(
+                search=SearchVector('location', 'address', 'description')).filter(search=location),
+                       'UserData': user.profilepicture
+            }
+            return render(request, 'apartments/search_zip.html', context)
+        else:
+            return render(request, 'apartments/search_zip.html')
     else:
-        return render(request, 'apartments/search_zip.html')
-
+        if zip_front != '' and location == '':
+            context = {'ZipOrLocation': Apartment.objects.filter(postalcode=zip_front)}
+            return render(request, 'apartments/search_zip.html', context)
+        elif location != '' and zip_front == '':
+            location = location.capitalize()
+            context = {'ZipOrLocation': Apartment.objects.annotate(
+                search=SearchVector('location', 'address', 'description')).filter(search=location)}
+            return render(request, 'apartments/search_zip.html', context)
+        else:
+            return render(request, 'apartments/search_zip.html')
 
 def add_apartment(request):
     profile = Apartment.objects.filter().first()
@@ -69,12 +117,25 @@ def add_apartment(request):
 
 
 def order(request, id):
-    return render(request, 'apartments/order.html', {
-        'Apartment': get_object_or_404(Apartment, pk=id)
-    })
+    if request.user.is_authenticated:
+        user = User.objects.get(user_id=request.user.id)
+        return render(request, 'apartments/order.html', {
+            'Apartment': get_object_or_404(Apartment, pk=id),
+            'UserData': user.profilepicture
+        })
+    else:
+        return render(request, 'apartments/order.html',{
+            'Apartment': get_object_or_404(Apartment, pk=id)
+        })
 
 
 def order_confirmation(request, id):
-    return render(request, 'apartments/order_confirmation.html', {
-        'Apartment': get_object_or_404(Apartment, pk=id)
-    })
+    if request.user.is_authenticated:
+        user = User.objects.get(user_id=request.user.id)
+        return render(request, 'apartments/order_confirmation.html', {
+            'Apartment': get_object_or_404(Apartment, pk=id),
+            'UserData': user.profilepicture})
+    else:
+        return render(request, 'apartments/order_confirmation.html', {
+            'Apartment': get_object_or_404(Apartment, pk=id)
+        })
