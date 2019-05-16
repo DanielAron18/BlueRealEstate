@@ -8,11 +8,8 @@ from user.models import User
 
 
 def contact_us_index(request):
-    try:
+    if request.user.is_authenticated:
         user = User.objects.get(user_id=request.user.id)
-    except:
-        user = None
-    if user != None:
         return render(request, "contact_us/contact_us.html", {
             'UserData': user.profilepicture,
         })

@@ -13,9 +13,9 @@ def log_in_index(request):
 
 
 def profile_index(request):
-    try:
+    if request.user.is_authenticated:
         user = User.objects.get(user_id=request.user.id)
-    except:
+    else:
         user = None
     try:
         apartments = set()
@@ -23,14 +23,9 @@ def profile_index(request):
             apartments.add(Apartment.objects.get(id=item))
     except:
         apartments = None
-    try:
-        images = ApartmentImage.objects.get.all()
-    except:
-        images = None
     return render(request, "user/user_profile.html", {
         'userData': user,
         'apartments': apartments,
-        'images': images
     })
 
 
