@@ -4,8 +4,11 @@ from user.models import User
 
 
 def about_us_index(request):
-    if request.user.is_authenticated:
+    try:
         user = User.objects.get(user_id=request.user.id)
+    except:
+        user = None
+    if user != None:
         return render(request, "about_us/about_us.html", {
             'UserData': user.profilepicture,
         })

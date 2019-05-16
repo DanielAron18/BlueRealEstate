@@ -135,7 +135,7 @@ def order(request, id):
                     'OrderInfo': order
                 })
             else:
-                print('something more to come')
+                print('YOU CAN NOT BE HERE')
     else:
         if request.user.is_authenticated:
             user = User.objects.get(user_id=request.user.id)
