@@ -13,9 +13,9 @@ def log_in_index(request):
 
 
 def profile_index(request):
-    if request.user.is_authenticated:
+    try:
         user = User.objects.get(user_id=request.user.id)
-    else:
+    except:
         user = None
     try:
         apartments = set()

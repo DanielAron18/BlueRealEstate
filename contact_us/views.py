@@ -9,8 +9,11 @@ from user.models import User
 
 def contact_us_index(request):
     if request.method == 'POST':
-        if request.user.is_authenticated:
+        try:
             user = User.objects.get(user_id=request.user.id)
+        except:
+            user = None
+        if user != None:
             form = ContactUsForm(data=request.POST)
             if form.is_valid():
                 message = Messages()
@@ -31,8 +34,11 @@ def contact_us_index(request):
                 message.save()
                 return redirect('front_page')
     else:
-        if request.user.is_authenticated:
+        try:
             user = User.objects.get(user_id=request.user.id)
+        except:
+            user = None
+        if user != None:
             return render(request, "contact_us/contact_us.html", {
                 'UserData': user.profilepicture,
                 'form': ContactUsForm
