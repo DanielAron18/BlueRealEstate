@@ -26,32 +26,36 @@
 
             </div>
         </div>
+    <div class="container marketing">
         <div class="row">
-            <div class="col-md-4">
-                <h3>Description</h3>
+            <div class="col-md-6 description">
+                <hr>
+                <h3 class="headings-all">Description</h3>
                 <p>{{ Apartment.description }}</p>
             </div>
-            <div class="col-md-4">
+        <div class="col-md-3 purchase">
+            <hr>
                 <h3>Purchase</h3>
                 <h1>{{ url }}</h1>
                 <p>{{ Apartment.price }} kr total price</p>
                 <p>Mortgage options available.</p>
                 <p>20 year plan as low as ...</p>
                 <p>40 year plan as low as ...</p>
-                <input type="submit" id="btnPurchaseApartment" onclick="window.location.href='{{ request.get_full_path }}/order'" name="btnPurchaseApartment" value="Purchase now" />
+                <input type="submit" id="btnPurchaseApartment" class="btn btn-primary" onclick="window.location.href='{{ request.get_full_path }}/order'" name="btnPurchaseApartment" value="Purchase now" />
 
             </div>
-            <div class="col-md-4 agent-profile-link">
-                <a class="agent-profile-link" href="{{ url }} agent/{{ Apartment.agentid.id }}">
+            <div class="col-md-3 agent-profile-link">
+                <hr>
                 <h3>Seller information</h3>
+                <a class="agent-profile-link" href="{{ url }} agent/{{ Apartment.agentid.id }}">
                 <div class="row">
-                    <div class="col-md-6 agent-profile-link">
-                        <h5>Contact</h5>
-                        <p>Name: {{ Apartment.agentid.name }}</p>
-                        <p>Tel: {{ Apartment.agentid.cellphone }}</p>
-                        <p>Work: {{ Apartment.agentid.workphone }}</p>
-                        <p>Email: {{ Apartment.agentid.email }} </p>
-                        <div class="row" id="stars">
+                    <div class="col agent-profile-link">
+                        <img id="sellerPicture" class="rounded-circle" src="{{ Apartment.agentid.profilepicture }}">
+                        <p>{{ Apartment.agentid.name }}</p>
+                        <p><i class="fa fa-phone" aria-hidden="true"></i> {{ Apartment.agentid.cellphone }}</p>
+                        <p><i class="fa fa-building" aria-hidden="true"></i> {{ Apartment.agentid.workphone }}</p>
+                        <p><i class="fa fa-envelope" aria-hidden="true"></i> {{ Apartment.agentid.email }} </p>
+                        <div class="col" id="stars">
                             <script>
                                 var starstring = document.createTextNode("⭐".repeat({{ Apartment.agentid.rating }}))
 
@@ -62,13 +66,11 @@
                         <p>{{ Apartment.agentid.description }}</p>
 
                     </div>
-                    <div class="col-md-6">
-                        <img id="sellerPicture" class="rounded-circle"src="{{ Apartment.agentid.profilepicture }}">
-                    </div>
                 </div>
                 </a>
             </div>
         </div>
+    </div>
 
 
 {% endblock %}
