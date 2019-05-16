@@ -40,6 +40,8 @@ p {
 
 .interiorImage {
     width: 100%;
+    border-radius: 2p 2px 2px 2px;
+    padding-bottom: 2px;
 }
 
 #firstinteriorImage {
