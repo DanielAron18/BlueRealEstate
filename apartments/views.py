@@ -29,12 +29,10 @@ def get_apartment_by_id(request, id):
         'Apartment': get_object_or_404(Apartment, pk=id)
     })
 
+
 def order_by_price(request):
-    try:
+    if request.user.is_authenticated:
         user = User.objects.get(user_id=request.user.id)
-    except:
-        user = None
-    if user != None:
         return render(request, "apartments/order_by_price.html", {
             'OrderByPrice': Apartment.objects.all().order_by('price'),
             'UserData': user.profilepicture,
