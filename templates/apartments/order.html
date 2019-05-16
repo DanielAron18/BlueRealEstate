@@ -1,15 +1,57 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <script src="{% static 'js/single_apartment_details.js' %}"></script>
+    <script src="{% static 'js/order.js' %}"></script>
     <link rel="stylesheet" href="{% static 'css/order.css' %}">
     <div class="container information-page">
-    <h1>ORDER</h1>
-        <div class="row">
-            <h1 class="MainHeader">{{ Apartment.address }}, {{ Apartment.postalcode }}  {{ Apartment.location }}</h1>
-        </div>
+    <h2>Purchase order for {{ Apartment.address }}, {{ Apartment.postalcode }}  {{ Apartment.location }}</h2>
         <br>
         <div class="row">
+            <div class="col-5" style="border:1px solid black">
+                <h3>Apartment information</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img id="firstinteriorImage" class="interiorImage" src="{{ Apartment.apartmentimage_set.first }}"/>
+                        <img class="interiorImage" src="{{ Apartment.apartmentimage_set.first }}"/>
+                        <img id="lastinteriorImage" class="interiorImage" src="{{ Apartment.apartmentimage_set.first }}"/>
+                    </div>
+                    <div class="col-6">
+                        <p>{{ Apartment.agentid.name }}</p>
+                    </div>
+
+                </div>
+                <br>
+                <h3>Seller information</h3>
+                <div class="row">
+                    <div class="col-6">
+                        <img id="sellerPicture" class="rounded-circle"src="{{ Apartment.agentid.profilepicture }}">
+                    </div>
+                    <div class="col-6">
+                        <p>{{ Apartment.agentid.name }}</p>
+                        <p>
+                            <strong>Tel:</strong> {{ Apartment.agentid.cellphone }}<br>
+                            <strong>Work:</strong> {{ Apartment.agentid.workphone }}<br>
+                            <strong>@:</strong> {{ Apartment.agentid.email }} </p>
+                        <div class="row" id="stars">
+                        <script>
+                            var starstring = document.createTextNode("⭐".repeat({{ Apartment.agentid.rating }}))
+
+                            document.getElementById('stars').appendChild(starstring)
+
+                        </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-7" style="border:1px solid black">
+                <p>TESTING</p>
+                <p>TESTING</p>
+                <p>TESTING</p>
+                <p>TESTING</p>
+                <p>TESTING</p>
+            </div>
+        </div>
+        <!--<div class="row">
             <div class="col-md-8">
                 <img class="mainImage" src="{{ Apartment.apartmentimage_set.first }}"/>
             </div>
@@ -59,7 +101,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
 
 
 {% endblock %}
