@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 
 from apartments.forms.add_apartment import AddApartmentForm
-from apartments.models import Apartment
+from apartments.forms.apartment_order import ApartmentOrderForm
+from apartments.models import Apartment, ApartmentOrder
 from django.contrib.postgres.search import SearchVector
 
 
@@ -102,7 +103,7 @@ def zip_location_fields(request):
 
 def add_apartment(request):
     profile = Apartment.objects.filter().first()
-    if request.method == 'post':
+    if request.method == 'POST':
         form = AddApartmentForm(instance=profile, data=request.POST)
         if form.is_valid():
             profile = form.save(commit=False)
@@ -116,14 +117,35 @@ def add_apartment(request):
 
 
 def order(request, id):
-    if request.user.is_authenticated:
-        user = User.objects.get(user_id=request.user.id)
-        return render(request, 'apartments/order.html', {
-            'Apartment': get_object_or_404(Apartment, pk=id),
-            'UserData': user.profilepicture
-        })
+    if request.method == 'POST':
+        if request.user.is_authenticated:
+            user = User.objects.get(user_id=request.user.id)
+            form = ApartmentOrderForm(data=request.POST)
+            if form.is_valid():
+                order = ApartmentOrder()
+                order.user = user.id
+                order.cardholdername = request.POST['cardholdername']
+                order.cardnumber = request.POST['cardnumber']
+                order.exp = request.POST['exp']
+                order.cvv = request.POST['cvv']
+                order.save()
+                return render(request, 'apartments/order_confirmation.html', {
+                    'Apartment': get_object_or_404(Apartment, pk=id),
+                    'UserData': user.profilepicture,
+                    'OrderInfo': order
+                })
+            else:
+                print('something more to come')
     else:
-        return redirect('register')
+        if request.user.is_authenticated:
+            user = User.objects.get(user_id=request.user.id)
+            return render(request, 'apartments/order.html', {
+                'Apartment': get_object_or_404(Apartment, pk=id),
+                'UserData': user.profilepicture,
+                'form': ApartmentOrderForm
+            })
+        else:
+            return redirect('register')
 
 
 def order_confirmation(request, id):
