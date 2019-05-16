@@ -8,7 +8,7 @@ const message = document.querySelector('txtMsg')
 sendbutton.addEventListener('click', SendMessage, false);*/
 function HideForm() {
     let messageForm = document.getElementById("messageForm")
-    messageForm.style.visibility = "hidden"
+    messageForm.style.visibility = "hidden";
         /*havar hvernig gengur þessi virkni????*/
 }
 
