@@ -31,7 +31,7 @@ class ApartmentImage(models.Model):
 
 
 class ApartmentOrder(models.Model):
-    user = models.OneToOneField(User, one_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     cardholdername = models.CharField(max_length=255)
     cardnumber = models.CharField(max_length=255)
     exp = models.CharField(max_length=8)
