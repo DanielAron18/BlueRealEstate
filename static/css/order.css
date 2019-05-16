@@ -1,0 +1,54 @@
+.container .information-page {
+    margin-top: -10%;
+}
+.information-page{
+    background: #fff;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 70%;
+}
+.information-page form{
+    padding: 14%;
+}
+.information-page form .row{
+    margin-bottom: -7%;
+}
+.information-page h1, h2, h3, h4, h5{
+    text-align: center;
+    color: #0062cc;
+}
+
+p {
+    text-align: center;
+}
+
+#sellerPicture {
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    border: 2px solid dodgerblue;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.mainImage {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.interiorImage {
+    width: 100%;
+}
+
+#firstinteriorImage {
+   border-radius: 10px 10px 0 0;
+}
+
+#lastinteriorImage {
+   border-radius: 0 0 10px 10px;
+}
+
+
+
