@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
 
@@ -19,6 +20,7 @@ class Apartment(models.Model):
     def __str__(self):
         return self.location
 
+
 class ApartmentImage(models.Model):
     image = models.CharField(max_length=999)
     mainimage = models.BooleanField()
@@ -26,4 +28,12 @@ class ApartmentImage(models.Model):
 
     def __str__(self):
         return self.image
+
+
+class ApartmentOrder(models.Model):
+    user = models.OneToOneField(User, one_delete=models.CASCADE)
+    cardholdername = models.CharField(max_length=255)
+    cardnumber = models.CharField(max_length=255)
+    exp = models.CharField(max_length=8)
+    cvv = models.CharField(max_length=5)
 

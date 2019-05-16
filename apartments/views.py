@@ -1,10 +1,8 @@
-from django.db.models import Func, F, Value
 from django.shortcuts import render, get_object_or_404, redirect
 
 from apartments.forms.add_apartment import AddApartmentForm
 from apartments.models import Apartment
 from django.contrib.postgres.search import SearchVector
-from index.forms import SearchForm
 
 
 # Create your views here.
@@ -101,6 +99,7 @@ def zip_location_fields(request):
         else:
             return render(request, 'apartments/search_zip.html')
 
+
 def add_apartment(request):
     profile = Apartment.objects.filter().first()
     if request.method == 'post':
@@ -124,9 +123,7 @@ def order(request, id):
             'UserData': user.profilepicture
         })
     else:
-        return render(request, 'apartments/order.html',{
-            'Apartment': get_object_or_404(Apartment, pk=id)
-        })
+        return redirect('register')
 
 
 def order_confirmation(request, id):
