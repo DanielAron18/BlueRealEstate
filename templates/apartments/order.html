@@ -10,13 +10,11 @@
             <div class="col-5" style="border:1px solid black">
                 <h3>Apartment information</h3>
                 <div class="row">
-                    <div class="col-md-6">
-                        <img id="firstinteriorImage" class="interiorImage" src="{{ Apartment.apartmentimage_set.first }}"/>
-                        <img class="interiorImage" src="{{ Apartment.apartmentimage_set.first }}"/>
-                        <img id="lastinteriorImage" class="interiorImage" src="{{ Apartment.apartmentimage_set.first }}"/>
+                    <div class="col-md-12">
+                        <img class="mainImage" src="{{ Apartment.apartmentimage_set.first }}"/>
                     </div>
-                    <div class="col-6">
-                        <p>{{ Apartment.agentid.name }}</p>
+                    <div class="col-12">
+                        <p>{{ Apartment.description }}</p>
                     </div>
 
                 </div>
