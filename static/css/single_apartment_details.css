@@ -14,23 +14,36 @@
     margin-bottom: -7%;
 }
 .information-page h1, h2, h3, h4, h5{
-    text-align: center;
-    color: #0062cc;
+    text-align: left;
+    color: #3697fe;
 }
-
+#price-header {
+    margin-right:0;
+}
 p {
     text-align: center;
 }
-
+#stars {
+    text-align:center;
+}
 #sellerPicture {
     width: 150px;
     height: 150px;
-    text-align: center;
     border: 2px solid dodgerblue;
 }
-
+.agent-profile-link {
+    text-align: center;
+}
 * {
   box-sizing: border-box;
+}
+#btnPurchaseApartment {
+    background-color: #3697fe;
+    color: white;
+}
+.purchase {
+    text-align:center;
+    margin-bottom: 5%;
 }
 
 .mainImage {
