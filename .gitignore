@@ -1,4 +1,9 @@
 .idea/
+idea/
+.idea/workspace
+.idea/workspace.xml
+idea/workspace
+idea/workspace.xml
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
