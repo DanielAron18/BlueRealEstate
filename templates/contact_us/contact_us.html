@@ -10,8 +10,22 @@
         <form id="messageForm" name="messageForm" method="POST">
             <h3>Drop Us a Message</h3>
             {% csrf_token %}
-            {{ form }}
-            <input type="submit" class="btn btn-primary update" value="Update">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        {{ form.name }}
+                        {{ form.email}}
+                        {{ form.phonenumber}}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        {{form.message }}
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-primary update" value="Send Message">
+
+            </div>
         </form>
     </div>
 

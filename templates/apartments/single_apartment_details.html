@@ -7,7 +7,7 @@
     {% endwith %}
     <div class="container information-page">
         <div class="row">
-            <h1 class="MainHeader">{{ Apartment.address }}, {{ Apartment.postalcode }}  {{ Apartment.location }}</h1>
+            <div class="col-md-9"><h1 class="MainHeader">{{ Apartment.address }}, {{ Apartment.postalcode }}  {{ Apartment.location }}</h1></div> <div class="col-md-3"><h2 id="price-header">{{ Apartment.price }} kr.</h2></div>
         </div>
         <br>
         <div class="row">
@@ -19,7 +19,7 @@
                 <img class="interiorImage" src="{{ Apartment.apartmentimage_set.last }}"/>
                 <img id="lastinteriorImage" class="interiorImage" src="{{ Apartment.apartmentimage_set.first }}"/>
                 -->
-                {% for image in Apartment.apartmentimage_set.all%}
+                {% for image in Apartment.apartmentimage_set.all %}
                     <img class="interiorImage" src="{{ image }}"/>
                 {% endfor %}
             </div>

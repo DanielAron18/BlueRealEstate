@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 
-from contact_us.forms import ContactUsForm
 
 # Create your views here.
+from contact_us.forms.new_message import ContactUsForm
 from contact_us.models import Messages
 from user.models import User
 
@@ -15,7 +15,7 @@ def contact_us_index(request):
             if form.is_valid():
                 message = Messages()
                 message.name = request.POST['name']
-                message.phonenumber = request.POST['phone']
+                message.phonenumber = request.POST['phonenumber']
                 message.email = request.POST['email']
                 message.message = request.POST['message']
                 message.save()
@@ -25,7 +25,7 @@ def contact_us_index(request):
             if form.is_valid():
                 message = Messages()
                 message.name = request.POST['name']
-                message.phonenumber = request.POST['phone']
+                message.phonenumber = request.POST['phonenumber']
                 message.email = request.POST['email']
                 message.message = request.POST['message']
                 message.save()

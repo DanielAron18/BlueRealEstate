@@ -8,8 +8,9 @@ class ContactUsForm(ModelForm):
         model = Messages
         exclude = ['id']
         widgets = {
-            'name': widgets.Textarea(attrs={'class': 'form-control'}),
-            'email': widgets.Textarea(attrs={'class': 'form-control'}),
-            'phonenumber': widgets.Textarea(attrs={'class': 'form-control'}),
-            'message': widgets.Textarea(attrs={'class': 'form-control'}),
+            'name': widgets.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your Name'}),
+            'email': widgets.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your Email'}),
+            'phonenumber': widgets.TextInput(attrs={'class': 'form-control', 'placeholder': 'Your Phonenumber'}),
+            'message': widgets.Textarea(attrs={'class': 'form-control', 'id': 'comment', 'placeholder': 'Your Message'})
+
         }
