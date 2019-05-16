@@ -37,3 +37,5 @@ class ApartmentOrder(models.Model):
     cvv = models.CharField(max_length=5)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+
+print("hello")
