@@ -7,5 +7,5 @@ class AddApartmentImage(ModelForm):
         exclude = ['id', 'apartment']
         widgets = {
             'Image': widgets.Textarea(attrs={'class': 'form-control'}),
-            'mainimage': widgets.NullBooleanSelect(attrs={'class': 'form-control'}),
+            'mainimage': widgets.CheckboxInput(attrs={'class': 'form-control'}),
         }
