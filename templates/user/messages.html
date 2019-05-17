@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <link rel="stylesheet" href="{% static 'css/log_in.css' %}">
+
+    <div class="wrapper">
+    {% for message in messages.distinct %}
+        <h1>{{ message.name }}</h1>
+        <h1>{{ message.email }}</h1>
+        <h1>{{ message.phonenumber }}</h1>
+        <p>{{ message.message }}</p>
+    {% endfor %}
+    </div>
+
+
+{% endblock %}
