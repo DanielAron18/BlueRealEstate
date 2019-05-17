@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <script src="{% static 'js/order_success.js' %}"></script>
-    <link rel="stylesheet" href="{% static 'css/order_success.css' %}">
+    <script src="{% static 'js/order_confirmation.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/order_confirmation.css' %}">
     <div class="container information-page">
     <h2>Order confirmation for {{ Apartment.address }}, {{ Apartment.postalcode }}  {{ Apartment.location }}</h2>
+        <hr>
         <br>
         <div class="row">
-            <div class="col-5" style="border:1px solid black">
+            <div class="col-5">
                 <h3>Apartment information</h3>
+                <hr>
                 <div class="row">
                     <div class="col-md-12">
                         <img class="mainImage" src="{{ Apartment.apartmentimage_set.first }}"/>
@@ -20,46 +22,52 @@
                 </div>
                 <br>
                 <h3>Seller information</h3>
+                <hr>
                 <div class="row">
                     <div class="col-6">
                         <img id="sellerPicture" class="rounded-circle"src="{{ Apartment.agentid.profilepicture }}">
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 seller-info">
                         <p>{{ Apartment.agentid.name }}</p>
                         <p>
-                            <strong>Tel:</strong> {{ Apartment.agentid.cellphone }}<br>
-                            <strong>Work:</strong> {{ Apartment.agentid.workphone }}<br>
-                            <strong>@:</strong> {{ Apartment.agentid.email }} </p>
-                        <div class="row" id="stars">
+                            <i class="fa fa-phone" aria-hidden="true"></i> {{ Apartment.agentid.cellphone }}<br>
+                            <i class="fa fa-building" aria-hidden="true"></i> {{ Apartment.agentid.workphone }}<br>
+                            <i class="fa fa-envelope" aria-hidden="true"></i> {{ Apartment.agentid.email }} </p>
+                        <p id="stars">
                         <script>
                             var starstring = document.createTextNode("⭐".repeat({{ Apartment.agentid.rating }}))
 
                             document.getElementById('stars').appendChild(starstring)
 
                         </script>
-                        </div>
+                        </p>
                     </div>
                 </div>
             </div>
-            <div id="invoice" class="col-7" style="border:1px solid black">
-                <h3>Order details</h3><br>
+            <div id="invoice" class="col-7">
+                <h3>Order details</h3>
+                <hr>
                 <div class="row">
-                    <div class="col-6">
-                        <h5><strong>Buyer</strong></h5>
-                        <p><strong>Name</strong><br> {{ OrderInfo.cardholdername }}</p>
-                        <p><strong>Billing Address</strong><br> {{ OrderInfo.cardnumber }}</p>
-                        <p><strong>Buyer</strong><br> {{ OrderInfo.cardholdername }}</p>
-                        <p><strong>Buyer</strong><br> {{ OrderInfo.cardholdername }}</p>
-                    </div>
                     <div class="col-5">
                         <h5><strong>Apartment</strong></h5>
                         <p><strong>Address</strong><br> {{ Apartment.address }}</p>
                         <p><strong>Size</strong><br> {{ Apartment.bedrooms }} bedroom, {{ Apartment.size }} m3</p>
                         <p><strong>Total price</strong><br> {{ Apartment.price }} ISK</p>
                     </div>
+                    <div class="col-6">
+                        <h5><strong>Contact info</strong></h5>
+                        <p><strong>Address</strong><br> {{ OrderInfo.streetname }} {{ OrderInfo.housenumber }}</p>
+                        <p><strong>Country</strong><br> {{ OrderInfo.cardnumber }}</p>
+                        <p><strong>City</strong><br> {{ OrderInfo.postalcode }}, {{ OrderInfo.cardholdername }}</p>
+                        <p><strong>SSN</strong><br> {{ OrderInfo.ssn }}</p>
+                        <h5><strong>Billing info</strong></h5>
+                        <p><strong>Cardholder</strong><br> {{ OrderInfo.cardholdername }}</p>
+                        <p><strong>Card number</strong><br> {{ OrderInfo.cardnumber }}</p>
+                        <p><strong>Exp date</strong><br> {{ OrderInfo.exp }}</p>
+                    </div>
 
                     <input type="submit" onclick=goBack() class="btn btn-danger update" value="Back to apartment">
-                    <input type="submit" onclick="window.location.href='{{ request.get_full_path }}/order_success'" class="btn btn-primary update" value="Continue">
+                    <input type="submit" onclick="window.location.href='{{ request.get_full_path }}/order_success'" class="btn btn-success update" value="Place order">
                 </div>
             </div>
         </div>

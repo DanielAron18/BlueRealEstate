@@ -39,6 +39,6 @@ class ApartmentOrder(models.Model):
     ssn = models.IntegerField(max_length=20, null=True)
     cardholdername = models.CharField(max_length=255)
     cardnumber = models.CharField(max_length=255)
-    exp = models.CharField(max_length=8)
+    exp = models.DateField(max_length=8)
     cvv = models.CharField(max_length=5)
     user = models.ForeignKey(User, on_delete=models.CASCADE)

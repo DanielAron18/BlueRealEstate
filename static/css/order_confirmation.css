@@ -11,6 +11,10 @@
     padding: 14%;
 }
 
+.seller-info {
+    text-align: left;
+}
+
 #invoice p, #invoice h5{
     text-align: left;
 }
@@ -23,9 +27,6 @@
     color: #0062cc;
 }
 
-p {
-    text-align: center;
-}
 
 #sellerPicture {
     width: 150px;

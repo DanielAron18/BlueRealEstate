@@ -6,7 +6,7 @@ class AddApartmentForm(ModelForm):
         model = Apartment
         exclude = ['id', 'agentid']
         widgets = {
-            'postalcode': widgets.NumberInput(attrs={'class': 'form-control'}),
+            'postalcode': widgets.TextInput(attrs={'class': 'form-control'}),
             'location': widgets.TextInput(attrs={'class': 'form-control'}),
             'adress': widgets.TextInput(attrs={'class': 'form-control'}),
             'bedrooms': widgets.TextInput(attrs={'class': 'form-control'}),

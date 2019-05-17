@@ -10,6 +10,7 @@
         <div class="row">
             <div class="col-5">
                 <h3>Apartment information</h3>
+                <hr>
                 <div class="row">
                     <div class="col-md-12">
                         <img class="mainImage" src="{{ Apartment.apartmentimage_set.first }}"/>
@@ -44,26 +45,35 @@
                 </div>
             </div>
             <div class="col-7">
-                <form id="billingInfo" name="billingInfo" method="post">
+                <form id="billingInfo" name="billingInfo" method="post" style="margin-top: -65px;">
                     <h3>Contact Information</h3>
                     <hr>
                     {% csrf_token %}
                     {{ form.streetname }}
+                    <br>
                     {{ form.housenumber }}
+                    <br>
                     {{ form.city }}
+                    <br>
                     {{ form.country }}
+                    <br>
                     {{ form.postalcode }}
+                    <br>
                     {{ form.ssn }}
+                    <br>
                     <h3>Billing Information</h3>
                     <hr>
                     {% csrf_token %}
                     {{ form.cardholdername }}
+                    <br>
                     {{ form.cardnumber }}
+                    <br>
                     {{ form.exp }}
+                    <br>
                     {{ form.cvv }}
                     <br>
                     <input type="submit" onclick=goBack() class="btn btn-danger update" value="Back to apartment">
-                    <input type="submit" class="btn btn-primary update" value="Continue">
+                    <input type="submit" class="btn btn-primary update" value="Review Order">
 
                 </form>
             </div>
