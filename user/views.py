@@ -83,7 +83,7 @@ def forgot_password_index(request):
 
 def messages_index(request):
     try:
-        User.objects.get(user_id=request.user.id)
+        user = User.objects.get(user_id=request.user.id)
     except:
         user = None
     if user != None:
