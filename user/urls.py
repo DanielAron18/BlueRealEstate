@@ -10,4 +10,5 @@ urlpatterns = [
     path('edit_image/', views.edit_image_index, name="edit_image"),
     path('forgot_password/', views.forgot_password_index, name="forgot_password"),
     path('profile/', views.profile_index, name='profile'),
+    path('messages/', views.messages_index, name='messages'),
 ]

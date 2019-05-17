@@ -2,6 +2,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 
 from apartments.models import Apartment, ApartmentImage
+from contact_us.models import Messages
 from user.forms.profile_form import UserForm, ImageForm
 from user.models import User
 
@@ -78,3 +79,10 @@ def register_index(request):
 
 def forgot_password_index(request):
     return render(request, "index/front_page.html")
+
+
+def messages_index(request):
+    messages = Messages.objects.filter()
+    return render(request, "user/messages.html", {
+        'messages': messages
+    })

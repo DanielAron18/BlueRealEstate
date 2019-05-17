@@ -27,6 +27,10 @@
                 <h1><img class="rounded-circle user-photo" src="{% static 'images/agent_logo.png' %}"></h1>
             {% endif %}
             <a class="btn btn-primary btn-lg edit-button" href="{% url 'edit_image' %}">Change picture</a>
+        <div></div>
+        {% if request.user.is_superuser == True %}
+            <a class="btn btn-primary btn-lg edit-button" href="{% url 'messages' %}">Recent messages</a>
+        {% endif %}
         </div>
         <div class="col">
             <h1>&nbsp</h1>
