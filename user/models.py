@@ -15,4 +15,4 @@ class User(models.Model):
     profilepicture = models.CharField(max_length=255, blank=True)
     cellphone = models.CharField(max_length=15)
     email = models.CharField(max_length=255)
-    searchhistory = ArrayField(models.CharField(max_length=140))
+    searchhistory = ArrayField(models.CharField(max_length=140, default=list))

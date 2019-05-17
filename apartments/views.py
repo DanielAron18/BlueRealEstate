@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 
 from apartments.forms.add_apartment import AddApartmentForm
 from apartments.forms.apartment_order import ApartmentOrderForm
+from apartments.forms.add_apartment_images import  AddApartmentImage
 from apartments.models import Apartment, ApartmentOrder
 from django.contrib.postgres.search import SearchVector
 from index.forms import SearchForm
@@ -149,6 +150,10 @@ def add_apartment(request):
     if request.method == 'POST':
         new_apartments = Apartment
         form = AddApartmentForm(data=request.POST)
+        imageform1 = AddApartmentImage(data=request.POST)
+        imageform2 = AddApartmentImage(data=request.POST)
+        imageform3 = AddApartmentImage(data=request.POST)
+        imageform4 = AddApartmentImage(data=request.POST)
         if form.is_valid():
             new_apartments.price = request.POST['price']
             new_apartments.location = request.POST['location']
@@ -162,7 +167,12 @@ def add_apartment(request):
             return redirect('profile')
     else:
         return render(request, 'apartments/add_apartment.html', {
-            'form': AddApartmentForm()
+            'form': AddApartmentForm(),
+            'imageform1': AddApartmentImage,
+            'imageform2': AddApartmentImage,
+            'imageform3': AddApartmentImage,
+            'imageform4': AddApartmentImage
+
         })
 
 
@@ -177,6 +187,12 @@ def order(request, id):
             if form.is_valid():
                 order = ApartmentOrder()
                 order.user = request.user
+                order.streetname = request.POST['streetname']
+                order.housenumber = request.POST['housenumber']
+                order.city = request.POST['city']
+                order.country = request.POST['country']
+                order.postalcode = request.POST['postalcode']
+                order.ssn = request.POST['ssn']
                 order.cardholdername = request.POST['cardholdername']
                 order.cardnumber = request.POST['cardnumber']
                 order.exp = request.POST['exp']
