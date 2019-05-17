@@ -244,11 +244,11 @@ def order_success(request, id):
         user = User.objects.get(user_id=request.user.id)
     except:
         user = None
+    Apartment.objects.get(id=id).delete()
     if user != None:
         return render(request, 'apartments/order_success.html', {
-            'Apartment': get_object_or_404(Apartment, pk=id),
             'UserData': user.profilepicture})
+
     else:
         return render(request, 'apartments/order_success.html', {
-            'Apartment': get_object_or_404(Apartment, pk=id)
         })
