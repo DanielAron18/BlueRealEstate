@@ -146,17 +146,23 @@ def search_and_arrange_size(request):
 
 
 def add_apartment(request):
-    profile = Apartment.objects.filter().first()
     if request.method == 'POST':
-        form = AddApartmentForm(instance=profile, data=request.POST)
+        new_apartments = Apartment
+        form = AddApartmentForm(data=request.POST)
         if form.is_valid():
-            profile = form.save(commit=False)
-            profile.agentid = request.user.id
-            profile.save()
+            new_apartments.price = request.POST['price']
+            new_apartments.location = request.POST['location']
+            new_apartments.address = request.POST['address']
+            new_apartments.bedrooms = request.POST['bedrooms']
+            new_apartments.description = request.POST['description']
+            new_apartments.postalcode = request.POST['postalcode']
+            new_apartments.size = request.POST['size']
+            new_apartments.agentid = request.user.id
+            new_apartments.save()
             return redirect('profile')
     else:
         return render(request, 'apartments/add_apartment.html', {
-            'form': AddApartmentForm(instance=profile)
+            'form': AddApartmentForm()
         })
 
 
