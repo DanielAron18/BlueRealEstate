@@ -33,6 +33,7 @@ urlpatterns = [
     path('apartment_details/', include("apartments.urls")),
     path('order_price/apartment_details/', include("apartments.urls")),
     path('order_size/apartment_details/', include("apartments.urls")),
+    path('search/search_and_arrange_size/apartment_details/', include("apartments.urls")),
     path('search/apartment_details/', include("apartments.urls")),
     path('order_price/', order_by_price, name='order_price'),
     path('order_size/', order_by_size, name='order_size'),
