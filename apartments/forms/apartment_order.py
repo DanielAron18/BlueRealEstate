@@ -17,6 +17,6 @@ class ApartmentOrderForm(ModelForm):
             'ssn': widgets.TextInput(attrs={'class': 'form-control', 'placeholder': 'Social Security Number'}),
             'cardholdername': widgets.TextInput(attrs={'class': 'form-control', 'placeholder': 'Cardholder Name'}),
             'cardnumber': widgets.TextInput(attrs={'class': 'form-control', 'placeholder': 'Card Number'}),
-            'exp': widgets.DateInput(attrs={'class': 'form-control', 'placeholder': 'Exp Date'}),
+            'exp': widgets.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Exp Date'}),
             'cvv': widgets.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Cvv'}),
         }
