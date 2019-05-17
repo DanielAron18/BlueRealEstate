@@ -49,7 +49,9 @@
                     <hr>
                     {% csrf_token %}
                     {{ form }}
-                    <input type="submit" class="btn btn-primary update" value="Accept">
+                    <br>
+                    <input type="submit" onclick=goBack() class="btn btn-danger update" value="Back to apartment">
+                    <input type="submit" class="btn btn-primary update" value="Continue">
 
                 </form>
             </div>
