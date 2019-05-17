@@ -207,7 +207,23 @@ def order_confirmation(request, id):
         return render(request, 'apartments/order_confirmation.html', {
             'Apartment': get_object_or_404(Apartment, pk=id),
             'UserData': user.profilepicture})
+
     else:
         return render(request, 'apartments/order_confirmation.html', {
+            'Apartment': get_object_or_404(Apartment, pk=id)
+        })
+
+
+def order_success(request, id):
+    try:
+        user = User.objects.get(user_id=request.user.id)
+    except:
+        user = None
+    if user != None:
+        return render(request, 'apartments/order_success.html', {
+            'Apartment': get_object_or_404(Apartment, pk=id),
+            'UserData': user.profilepicture})
+    else:
+        return render(request, 'apartments/order_success.html', {
             'Apartment': get_object_or_404(Apartment, pk=id)
         })
