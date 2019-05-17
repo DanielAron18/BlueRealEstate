@@ -10,6 +10,11 @@
 .information-page form{
     padding: 14%;
 }
+
+#invoice p, #invoice h5{
+    text-align: left;
+}
+
 .information-page form .row{
     margin-bottom: -7%;
 }
