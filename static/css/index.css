@@ -149,7 +149,8 @@
 
     #main_content_index {
         display: flex;
-        height: 100%;
+        padding-bottom: 10%;
+        height: 65%;
     }
 
     #blueview{
@@ -160,7 +161,7 @@
     }
 
     #TrendingApartmentsContainer{
-        margin-top: 150px;
+        margin-top: 3%;
     }
 
     #bl_logo {
@@ -307,6 +308,8 @@
     #TrendingApartmentsHeader {
         padding-bottom: 3%;
     }
+
+
 
     /* Main images of apartment */
     .apartmentImage {

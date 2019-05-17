@@ -31,11 +31,14 @@ class ApartmentImage(models.Model):
 
 
 class ApartmentOrder(models.Model):
+    streetname = models.CharField(max_length=255, null=True)
+    housenumber = models.CharField(max_length=255, null=True)
+    city = models.CharField(max_length=255, null=True)
+    country = models.CharField(max_length=255, null=True)
+    postalcode = models.IntegerField(max_length=12, null=True)
+    ssn = models.IntegerField(max_length=20, null=True)
     cardholdername = models.CharField(max_length=255)
     cardnumber = models.CharField(max_length=255)
     exp = models.CharField(max_length=8)
     cvv = models.CharField(max_length=5)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-
-
-print("hello")

@@ -4,75 +4,31 @@ html, body {
     margin:0;
 
 }
-
-div h3 {
-    font-family: 'Acme', sans-serif;
+.marketing {
+    margin-top: 3%;
 }
-
-#container {
-    height: 80%;
-    width: 80%;
-    margin: 5% auto 0 auto;
-}
-
-#information {
-    float: left;
-    width: 100%;
-    padding-left: 6%;
-}
-
-#agent-image-container {
-    display: inline-block;
-    width: 40%;
-    height:40%;
-    margin-left: 10%;
-}
-
-#description {
-    display: block;
-    float: left;
-    width: 100%;
-    padding: 2% 6% 2% 6%;
+.row {
     margin-top: 3%;
 }
 
-#container-2 {
-    width: 40%;
-    height: 40%;
-    display: inline-block;
-    float: left;
+.seller-info {
+    text-align: center;
+}
+.info {
+    text-align:center;
+    margin:0.5%;
+}
+h1 {
+    text-align:center;
+    color: #3697fe;
 }
 
-#comments-review-1, #comments-review-2 {
-    display: inline-block;
-    width: 40%;
-    padding-left: 4%;
+h3{
+    text-align: center;
+    color: #3697fe;
 }
 
-#comments-review-2 {
-    margin-left:10%
-}
-
-#comments-review {
-    margin-top: 7%;
-}
-
-#information, #agent-image-container, #description, #comments-review-1, #comments-review-2 {
-    background-color: #3099FF;
-    color: #ffffff;
-    border: 1px solid #bbbab9;
-    -webkit-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
-    -moz-box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
-    box-shadow: 0px 2px 5px -1px rgba(0,0,0,0.43);
-    border-radius: 0.9rem;
-}
-
-#agent-image-container img {
-    width: 100%;
-    height: 100%;
-    border-radius: 0.9rem;
-}
-
-#myFooter {
-    border-top: 1px solid #bbbab9;
+#sellerPicture {
+    width: 70%;
+    height:70%;
 }

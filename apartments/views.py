@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 
 from apartments.forms.add_apartment import AddApartmentForm
 from apartments.forms.apartment_order import ApartmentOrderForm
+from apartments.forms.add_apartment_images import  AddApartmentImage
 from apartments.models import Apartment, ApartmentOrder
 from django.contrib.postgres.search import SearchVector
 from index.forms import SearchForm
@@ -146,17 +147,32 @@ def search_and_arrange_size(request):
 
 
 def add_apartment(request):
-    profile = Apartment.objects.filter().first()
     if request.method == 'POST':
-        form = AddApartmentForm(instance=profile, data=request.POST)
+        new_apartments = Apartment
+        form = AddApartmentForm(data=request.POST)
+        imageform1 = AddApartmentImage(data=request.POST)
+        imageform2 = AddApartmentImage(data=request.POST)
+        imageform3 = AddApartmentImage(data=request.POST)
+        imageform4 = AddApartmentImage(data=request.POST)
         if form.is_valid():
-            profile = form.save(commit=False)
-            profile.agentid = request.user.id
-            profile.save()
+            new_apartments.price = request.POST['price']
+            new_apartments.location = request.POST['location']
+            new_apartments.address = request.POST['address']
+            new_apartments.bedrooms = request.POST['bedrooms']
+            new_apartments.description = request.POST['description']
+            new_apartments.postalcode = request.POST['postalcode']
+            new_apartments.size = request.POST['size']
+            new_apartments.agentid = request.user.id
+            new_apartments.save()
             return redirect('profile')
     else:
         return render(request, 'apartments/add_apartment.html', {
-            'form': AddApartmentForm(instance=profile)
+            'form': AddApartmentForm(),
+            'imageform1': AddApartmentImage,
+            'imageform2': AddApartmentImage,
+            'imageform3': AddApartmentImage,
+            'imageform4': AddApartmentImage
+
         })
 
 
@@ -171,6 +187,12 @@ def order(request, id):
             if form.is_valid():
                 order = ApartmentOrder()
                 order.user = request.user
+                order.streetname = request.POST['streetname']
+                order.housenumber = request.POST['housenumber']
+                order.city = request.POST['city']
+                order.country = request.POST['country']
+                order.postalcode = request.POST['postalcode']
+                order.ssn = request.POST['ssn']
                 order.cardholdername = request.POST['cardholdername']
                 order.cardnumber = request.POST['cardnumber']
                 order.exp = request.POST['exp']
@@ -207,7 +229,23 @@ def order_confirmation(request, id):
         return render(request, 'apartments/order_confirmation.html', {
             'Apartment': get_object_or_404(Apartment, pk=id),
             'UserData': user.profilepicture})
+
     else:
         return render(request, 'apartments/order_confirmation.html', {
+            'Apartment': get_object_or_404(Apartment, pk=id)
+        })
+
+
+def order_success(request, id):
+    try:
+        user = User.objects.get(user_id=request.user.id)
+    except:
+        user = None
+    if user != None:
+        return render(request, 'apartments/order_success.html', {
+            'Apartment': get_object_or_404(Apartment, pk=id),
+            'UserData': user.profilepicture})
+    else:
+        return render(request, 'apartments/order_success.html', {
             'Apartment': get_object_or_404(Apartment, pk=id)
         })

@@ -82,7 +82,18 @@ def forgot_password_index(request):
 
 
 def messages_index(request):
-    messages = Messages.objects.filter()
-    return render(request, "user/messages.html", {
-        'messages': messages
-    })
+    try:
+        User.objects.get(user_id=request.user.id)
+    except:
+        user = None
+    if user != None:
+        messages = Messages.objects.filter()
+        return render(request, "user/messages.html", {
+            'UserData': user.profilepicture,
+            'messages': messages
+        })
+    else:
+        messages = Messages.objects.filter()
+        return(request, "user/messages.html", {
+            'messages': messages
+        })

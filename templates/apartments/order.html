@@ -45,10 +45,22 @@
             </div>
             <div class="col-7">
                 <form id="billingInfo" name="billingInfo" method="post">
+                    <h3>Contact Information</h3>
+                    <hr>
+                    {% csrf_token %}
+                    {{ form.streetname }}
+                    {{ form.housenumber }}
+                    {{ form.city }}
+                    {{ form.country }}
+                    {{ form.postalcode }}
+                    {{ form.ssn }}
                     <h3>Billing Information</h3>
                     <hr>
                     {% csrf_token %}
-                    {{ form }}
+                    {{ form.cardholdername }}
+                    {{ form.cardnumber }}
+                    {{ form.exp }}
+                    {{ form.cvv }}
                     <br>
                     <input type="submit" onclick=goBack() class="btn btn-danger update" value="Back to apartment">
                     <input type="submit" class="btn btn-primary update" value="Continue">

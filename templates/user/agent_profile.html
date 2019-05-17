@@ -3,36 +3,36 @@
 {% load static %}
 {% block content %}
     <link rel="stylesheet" href="{% static 'css/agent_profile.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
-
-    <p>{{ Agent.name }}</p>
-    <div id="container">
-
-        <div id="container-2">
-            <div id="information">
-                <h3>Information</h3>
-                <p><b>Name:</b> {{ AgentProfile.name }}</p>
-                <p><b>Cell:</b> {{ AgentProfile.cellphone }}</p>
-                <p><b>Phone:</b> {{ AgentProfile.workphone }}</p>
-            </div>
-            <div id="description">
-                <h3>Description</h3>
-                <p>{{ AgentProfile.description }}</p>
-            </div>
+    <div class="container marketing">
+    <h1>Seller information</h1>
+    <div class="row">
+        <div class="col-lg-4 shadow p-3 mb-5 bg-white rounded info">
+            <h3>Listings</h3>
+        </div>
+        <div class="col-lg-4 shadow p-3 mb-5 bg-white rounded info">
+            <h3>Reviews</h3>
         </div>
 
-        <div id="agent-image-container">
-            <img src="{{ AgentProfile.profilepicture }}">
+        <div class="col-lg-3 shadow p-3 mb-5 bg-white rounded info">
+            <h3>{{ AgentProfile.name }}</h3>
+            <div class="col-md-12 seller-info">
+                        <img id="sellerPicture" class="rounded-circle"src="{{ AgentProfile.profilepicture }}">
+                    </div>
+            <div class="col-md-12 seller-info">
+            <p>{{ Apartment.agentid.name }}</p>
+            <p>
+                <i class="fa fa-phone" aria-hidden="true"></i> {{ AgentProfile.cellphone }}<br>
+                <i class="fa fa-building" aria-hidden="true"></i> {{ AgentProfile.workphone }}<br>
+                <i class="fa fa-envelope" aria-hidden="true"></i> {{ AgentProfile.email }} </p>
+            <p id="stars">
+            <script>
+                var starstring = document.createTextNode("⭐".repeat({{ AgentProfile.rating }}))
+
+                document.getElementById('stars').appendChild(starstring)
+            </script>
+            </p>
+                </div>
         </div>
-        <div id="comments-review">
-            <div id="comments-review-1">
-                <h3>Rating</h3>
-                <p>{{ AgentProfile.rating }}</p>
-            </div>
-            <div id="comments-review-2">
-                <h3>Comments</h3>
-                <p>{{ AgentProfile.comments }}</p>
-            </div>
-        </div>
+    </div>
     </div>
 {% endblock %}

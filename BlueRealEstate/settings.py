@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'key_information',
     'location',
     'user',
-    'why_blue'
+    'why_blue',
+    'django_countries'
 ]
 
 MIDDLEWARE = [

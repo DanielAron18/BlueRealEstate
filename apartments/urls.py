@@ -6,4 +6,5 @@ urlpatterns = [
     path('add_apartment', views.add_apartment, name='add_apartment'),
     path('<int:id>/order', views.order, name='order'),
     path('<int:id>/order/order_confirmation', views.order_confirmation, name='order_confirmation'),
+    path('<int:id>/order/order_success', views.order_success, name='order_success'),
 ]
