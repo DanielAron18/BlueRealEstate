@@ -9,12 +9,10 @@
     <h2 id="successHeader">ORDER SUCCESSFUL <img id="successImg" src="{% static 'images/success.png' %}"></h2>
         <hr>
         <br>
-            <div id="invoice" class="col-7">
-                <h3>Congratulations</h3><br>
-                <div class="row">
-                    <p style="text-align: center"><strong>Your purchase has been succesful. Thank you for choosing Blue Real Estate!</strong><br><br>
+            <div id="invoice" class="col-12 center">
+                <h3>Congratulations</h3>
+                <p style="text-align: center"><strong>Your purchase has been succesful. Thank you for choosing Blue Real Estate!</strong><br><br>
                     <a class="btn btn-primary update" href="{% url 'front_page' %}">Back to front page</a></p>
-                </div>
             </div>
         </div>
 {% endblock %}
