@@ -34,16 +34,26 @@
 
             <!-- Size, Type, Rooms -->
             <div id="search_buttons_parameters">
-                
-                <!-- Order by price button -->
-                <button id="size" type="button" class="btn btn-primary" name="orderby_price" onclick="window.location.href='{{ url }}/order_price/'">
-                    Order by price
-                </button>
 
-                <!-- Order by size button -->
-                  <button id="size" type="button" class="btn btn-primary" name="orderby_price" onclick="window.location.href='{{ url }}/order_size/'">
-                    Order by Size
-                </button>
+                {% if request.path == '/search/' %}
+                    <!-- Order by price button -->
+                    <button id="size" type="button" class="btn btn-primary" name="orderby_price" onclick="window.location.href='{{ url }}/search/search_and_arrange_price/'">
+                        Order by price
+                    </button>
+                    <!-- Order by size button -->
+                    <button id="size" type="button" class="btn btn-primary" name="orderby_size" onclick="window.location.href='{{ url }}/search/search_and_arrange_size/'">
+                        Order by Size
+                    </button>
+                {% else %}
+                    <button id="size" type="button" class="btn btn-primary" name="orderby_price" onclick="window.location.href='{{ url }}/order_price/'">
+                        Order by price
+                    </button>
+                    <button id="size" type="button" class="btn btn-primary" name="orderby_size" onclick="window.location.href='{{ url }}/order_size/'">
+                        Order by Size
+                    </button>
+                {% endif %}
+
+
                 {% csrf_token %}
                 {{ form }}
             </div>
@@ -67,9 +77,12 @@
                 {% for apartment in OrderByPrice %}
                     {% include 'apartments/single_apartment.html' with  apartment=apartment %}
                 {% endfor %}
-                {% elif request.path == '/order_price/' %}
-            {% else %}
+            {% elif request.path == '/search/' %}
                 {% for apartment in ZipOrLocation %}
+                    {% include 'apartments/single_apartment.html' with  apartment=apartment %}
+                {% endfor %}
+            {% else %}
+                {% for apartment in SearchArrange %}
                     {% include 'apartments/single_apartment.html' with  apartment=apartment %}
                 {% endfor %}
             {% endif %}

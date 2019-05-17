@@ -4,6 +4,8 @@ from apartments.forms.add_apartment import AddApartmentForm
 from apartments.forms.apartment_order import ApartmentOrderForm
 from apartments.models import Apartment, ApartmentOrder
 from django.contrib.postgres.search import SearchVector
+from index.forms import SearchForm
+from index.models import Search
 
 
 # Create your views here.
@@ -81,8 +83,15 @@ def order_by_size(request):
 
 
 def zip_location_fields(request):
+
     zip_front = request.POST['zipfield']
     location = request.POST['locationfield'].lower()
+
+    if location is not None and zip_front is '':
+        Search.objects.create(location=location, zip='None')
+    elif zip_front is not None and location is '':
+        Search.objects.create(location='None', zip=zip_front)
+
     try:
         user = User.objects.get(user_id=request.user.id)
     except:
@@ -114,6 +123,26 @@ def zip_location_fields(request):
             return render(request, 'apartments/search_zip.html', context)
         else:
             return render(request, 'apartments/search_zip.html')
+
+
+def search_and_arrange_price(request):
+    latest_id = Search.objects.latest('id')
+    if latest_id.location == 'None' and latest_id.zip:
+        context = {'SearchArrange': Apartment.objects.filter(postalcode=latest_id.zip).order_by('price')}
+    else:
+        context = {'SearchArrange': Apartment.objects.annotate(
+                search=SearchVector('location', 'address', 'description')).filter(search=latest_id.location).order_by('price')}
+    return render(request, 'apartments/search_arrange.html', context)
+
+
+def search_and_arrange_size(request):
+    latest_id = Search.objects.latest('id')
+    if latest_id.location == 'None' and latest_id.zip:
+        context = {'SearchArrange': Apartment.objects.filter(postalcode=latest_id.zip).order_by('size')}
+    else:
+        context = {'SearchArrange': Apartment.objects.annotate(
+                search=SearchVector('location', 'address', 'description')).filter(search=latest_id.location).order_by('size')}
+    return render(request, 'apartments/search_arrange.html', context)
 
 
 def add_apartment(request):

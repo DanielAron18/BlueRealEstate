@@ -19,11 +19,11 @@ from apartments.views import order_by_price
 from apartments.views import order_by_size
 from apartments.views import zip_location_fields
 from apartments.views import order, order_confirmation
+from apartments.views import search_and_arrange_price, search_and_arrange_size
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("index.urls")),
-    #path('order_price/', include("index.urls")),
     path('key_information/', include("key_information.urls")),
     path('about_us/', include("about_us.urls")),
     path('contact_us/', include("contact_us.urls")),
@@ -39,4 +39,6 @@ urlpatterns = [
     path('search/', zip_location_fields, name='search'),
     path('order/', order, name='order'),
     path('apartment_details/agent/', include("agent.urls")),
+    path('search/search_and_arrange_price/', search_and_arrange_price, name='search_and_arrange_price'),
+    path('search/search_and_arrange_size/', search_and_arrange_size, name='search_and_arrange_size'),
 ]
