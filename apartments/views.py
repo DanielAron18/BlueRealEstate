@@ -164,6 +164,9 @@ def add_apartment(request):
             new_apartments.size = request.POST['size']
             new_apartments.agentid = request.user.id
             new_apartments.save()
+            if imageform1.is_valid():
+                imageform1.image = request.POST[imageform1.image]
+                imageform1.mainimage = request.POST[IM]
             return redirect('profile')
     else:
         return render(request, 'apartments/add_apartment.html', {
