@@ -24,7 +24,7 @@ def profile_index(request):
             apartments.add(Apartment.objects.get(id=item))
     except:
         apartments = None
-    if user != None:
+    if user is not None:
         return render(request, "user/user_profile.html", {
             'userData': user,
             'apartments': apartments,
@@ -86,7 +86,7 @@ def messages_index(request):
         user = User.objects.get(user_id=request.user.id)
     except:
         user = None
-    if user != None:
+    if user is not None:
         messages = Messages.objects.filter()
         return render(request, "user/messages.html", {
             'UserData': user.profilepicture,
