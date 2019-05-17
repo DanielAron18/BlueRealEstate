@@ -1,6 +1,18 @@
 .container .information-page {
     margin-top: -10%;
 }
+
+#successHeader{
+    color: limegreen;
+}
+
+.seller-info {
+    text-align: left;
+}
+
+#successImg{
+    width: 5%;
+}
 .information-page{
     background: #fff;
     margin-top: 5%;
@@ -23,9 +35,6 @@
     color: #0062cc;
 }
 
-p {
-    text-align: center;
-}
 
 #sellerPicture {
     width: 150px;

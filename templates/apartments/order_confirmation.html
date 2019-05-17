@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <script src="{% static 'js/order_success.js' %}"></script>
-    <link rel="stylesheet" href="{% static 'css/order_success.css' %}">
+    <script src="{% static 'js/order_confirmation.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/order_confirmation.css' %}">
     <div class="container information-page">
     <h2>Order confirmation for {{ Apartment.address }}, {{ Apartment.postalcode }}  {{ Apartment.location }}</h2>
+        <hr>
         <br>
         <div class="row">
-            <div class="col-5" style="border:1px solid black">
+            <div class="col-5">
                 <h3>Apartment information</h3>
+                <hr>
                 <div class="row">
                     <div class="col-md-12">
                         <img class="mainImage" src="{{ Apartment.apartmentimage_set.first }}"/>
@@ -20,29 +22,31 @@
                 </div>
                 <br>
                 <h3>Seller information</h3>
+                <hr>
                 <div class="row">
                     <div class="col-6">
                         <img id="sellerPicture" class="rounded-circle"src="{{ Apartment.agentid.profilepicture }}">
                     </div>
-                    <div class="col-6">
+                    <div class="col-6 seller-info">
                         <p>{{ Apartment.agentid.name }}</p>
                         <p>
-                            <strong>Tel:</strong> {{ Apartment.agentid.cellphone }}<br>
-                            <strong>Work:</strong> {{ Apartment.agentid.workphone }}<br>
-                            <strong>@:</strong> {{ Apartment.agentid.email }} </p>
-                        <div class="row" id="stars">
+                            <i class="fa fa-phone" aria-hidden="true"></i> {{ Apartment.agentid.cellphone }}<br>
+                            <i class="fa fa-building" aria-hidden="true"></i> {{ Apartment.agentid.workphone }}<br>
+                            <i class="fa fa-envelope" aria-hidden="true"></i> {{ Apartment.agentid.email }} </p>
+                        <p id="stars">
                         <script>
                             var starstring = document.createTextNode("⭐".repeat({{ Apartment.agentid.rating }}))
 
                             document.getElementById('stars').appendChild(starstring)
 
                         </script>
-                        </div>
+                        </p>
                     </div>
                 </div>
             </div>
-            <div id="invoice" class="col-7" style="border:1px solid black">
+            <div id="invoice" class="col-7">
                 <h3>Order details</h3><br>
+                <hr>
                 <div class="row">
                     <div class="col-6">
                         <h5><strong>Buyer</strong></h5>
