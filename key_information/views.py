@@ -5,8 +5,11 @@ from user.models import User
 
 
 def key_info_index(request):
-    if request.user.is_authenticated:
+    try:
         user = User.objects.get(user_id=request.user.id)
+    except:
+        user = None
+    if user != None:
         return render(request, "key_information/key_information.html", {
             'UserData': user.profilepicture,
         })

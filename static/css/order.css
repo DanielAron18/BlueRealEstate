@@ -18,8 +18,8 @@
     color: #0062cc;
 }
 
-p {
-    text-align: center;
+.seller-info {
+    text-align: left;
 }
 
 #sellerPicture {

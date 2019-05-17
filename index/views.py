@@ -5,8 +5,11 @@ from apartments.models import Apartment
 
 
 def index(request):
-    if request.user.is_authenticated:
+    try:
         user = User.objects.get(user_id=request.user.id)
+    except:
+        user = None
+    if user != None:
         return render(request, "index/front_page.html", {
             'apartments': Apartment.objects.all(),
             'UserData': user.profilepicture,

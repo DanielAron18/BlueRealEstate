@@ -31,7 +31,7 @@
         <a href="{% url 'key_info' %}"><h5 style="font-size: 1rem">Key Info</h5></a>
         <a href="{% url 'why_blue' %}"><h5 style="font-size: 1rem">Why Blue?</h5></a>
         {% if user.is_authenticated %}
-            {% if UserData != "" %}
+            {% if UserData != "" and UserData != None%}
                 <a href="{% url 'profile' %}"><img src="{{UserData}}" class="rounded-circle" style="height: 50px; width: 65px"></a>
                 {% else %}
                 <a href="{% url 'profile' %}"><img src="{% static 'images/agent_logo.png' %}", class="rounded-circle" style="height: 50px; width: 65px"></a>

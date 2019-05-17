@@ -35,4 +35,7 @@ class ApartmentOrder(models.Model):
     cardnumber = models.CharField(max_length=255)
     exp = models.CharField(max_length=8)
     cvv = models.CharField(max_length=5)
-    user = models.IntegerField(max_length=255)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
+print("hello")

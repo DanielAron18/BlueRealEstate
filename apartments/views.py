@@ -11,8 +11,11 @@ from user.models import User
 
 
 def index(request):
-    if request.user.is_authenticated:
+    try:
         user = User.objects.get(user_id=request.user.id)
+    except:
+        user = None
+    if user != None:
         return render(request, 'apartments/single_apartment.html', {
             'Apartments': Apartment.objects.all(),
             'UserData': user.profilepicture
@@ -24,8 +27,11 @@ def index(request):
 
 
 def get_apartment_by_id(request, id):
-    if request.user.is_authenticated:
+    try:
         user = User.objects.get(user_id=request.user.id)
+    except:
+        user = None
+    if user != None:
         if user.searchhistory:
             user.searchhistory.append(id)
             user.save()
@@ -43,8 +49,11 @@ def get_apartment_by_id(request, id):
 
 
 def order_by_price(request):
-    if request.user.is_authenticated:
+    try:
         user = User.objects.get(user_id=request.user.id)
+    except:
+        user = None
+    if user != None:
         return render(request, "apartments/order_by_price.html", {
             'OrderByPrice': Apartment.objects.all().order_by('price'),
             'UserData': user.profilepicture,
@@ -56,8 +65,11 @@ def order_by_price(request):
 
 
 def order_by_size(request):
-    if request.user.is_authenticated:
+    try:
         user = User.objects.get(user_id=request.user.id)
+    except:
+        user = None
+    if user != None:
         return render(request, 'apartments/order_by_size.html', {
             'OrderBySize': Apartment.objects.all().order_by('size'),
             'UserData': user.profilepicture,
@@ -71,8 +83,11 @@ def order_by_size(request):
 def zip_location_fields(request):
     zip_front = request.POST['zipfield']
     location = request.POST['locationfield'].lower()
-    if request.user.is_authenticated:
+    try:
         user = User.objects.get(user_id=request.user.id)
+    except:
+        user = None
+    if user != None:
         zip_front = request.POST['zipfield']
         location = request.POST['locationfield'].lower()
         if zip_front != '' and location == '':
@@ -118,12 +133,15 @@ def add_apartment(request):
 
 def order(request, id):
     if request.method == 'POST':
-        if request.user.is_authenticated:
+        try:
             user = User.objects.get(user_id=request.user.id)
+        except:
+            user = None
+        if user != None:
             form = ApartmentOrderForm(data=request.POST)
             if form.is_valid():
                 order = ApartmentOrder()
-                order.user = user.id
+                order.user = request.user
                 order.cardholdername = request.POST['cardholdername']
                 order.cardnumber = request.POST['cardnumber']
                 order.exp = request.POST['exp']
@@ -135,10 +153,13 @@ def order(request, id):
                     'OrderInfo': order
                 })
             else:
-                print('something more to come')
+                print('YOU CAN NOT BE HERE')
     else:
-        if request.user.is_authenticated:
+        try:
             user = User.objects.get(user_id=request.user.id)
+        except:
+            user = None
+        if user != None:
             return render(request, 'apartments/order.html', {
                 'Apartment': get_object_or_404(Apartment, pk=id),
                 'UserData': user.profilepicture,
@@ -149,8 +170,11 @@ def order(request, id):
 
 
 def order_confirmation(request, id):
-    if request.user.is_authenticated:
+    try:
         user = User.objects.get(user_id=request.user.id)
+    except:
+        user = None
+    if user != None:
         return render(request, 'apartments/order_confirmation.html', {
             'Apartment': get_object_or_404(Apartment, pk=id),
             'UserData': user.profilepicture})

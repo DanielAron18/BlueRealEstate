@@ -13,9 +13,9 @@ def log_in_index(request):
 
 
 def profile_index(request):
-    if request.user.is_authenticated:
+    try:
         user = User.objects.get(user_id=request.user.id)
-    else:
+    except:
         user = None
     try:
         apartments = set()
@@ -23,10 +23,16 @@ def profile_index(request):
             apartments.add(Apartment.objects.get(id=item))
     except:
         apartments = None
-    return render(request, "user/user_profile.html", {
-        'userData': user,
-        'apartments': apartments,
-    })
+    if user != None:
+        return render(request, "user/user_profile.html", {
+            'userData': user,
+            'apartments': apartments,
+        })
+    else:
+        return render(request, "user/user_profile.html", {
+            'userData': user,
+            'apartments': apartments,
+        })
 
 
 def edit_profile_index(request):
